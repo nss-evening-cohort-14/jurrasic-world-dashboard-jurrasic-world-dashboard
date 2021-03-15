@@ -14,3 +14,6 @@ https://github.com/nss-evening-cohort-14/jurrasic-world-dashboard-jurrasic-world
 
 ## MILESTONES
 https://github.com/nss-evening-cohort-14/jurrasic-world-dashboard-jurrasic-world-dashboard/milestones
+
+## NETLIFY
+jurassic-world-dashboard.netlify.app
