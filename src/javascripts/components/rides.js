@@ -12,4 +12,8 @@ const showRides = (arr) => {
   });
 };
 
-export default showRides;
+const emptyRides = () => {
+  document.querySelector('#card-container').innerHTML = '<h1>No Items</h1>';
+};
+
+export { showRides, emptyRides };

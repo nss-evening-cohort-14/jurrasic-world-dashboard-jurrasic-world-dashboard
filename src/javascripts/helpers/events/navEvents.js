@@ -1,4 +1,4 @@
-import showRides from '../../components/rides';
+import { showRides, emptyRides } from '../../components/rides';
 import getRides from '../ridesData';
 
 const navigationEvents = () => {
@@ -19,7 +19,13 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#rides').addEventListener('click', () => {
-    getRides().then((ridesArray) => showRides(ridesArray));
+    getRides().then((ridesArray) => {
+      if (ridesArray.length) {
+        showRides(ridesArray);
+      } else {
+        emptyRides();
+      }
+    });
   });
 };
 
