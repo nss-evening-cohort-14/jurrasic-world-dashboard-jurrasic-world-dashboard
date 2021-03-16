@@ -1,3 +1,6 @@
+import { emptyEquipment, showEquipment } from '../../components/equipment';
+import getEquipment from '../equipmentData';
+
 const navigationEvents = () => {
   document.querySelector('#dinosaurs').addEventListener('click', () => {
     console.warn('CONNECTED');
@@ -12,7 +15,13 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#equipment').addEventListener('click', () => {
-    console.warn('CONNECTED');
+    getEquipment().then((equipmentArray) => {
+      if (equipmentArray.length) {
+        showEquipment(equipmentArray);
+      } else {
+        emptyEquipment();
+      }
+    });
   });
 
   document.querySelector('#rides').addEventListener('click', () => {
