@@ -1,6 +1,6 @@
 const showRides = (arr) => {
   document.querySelector('#card-container').innerHTML = '';
-  document.querySelector('#title-container').innerHTML = 'Rides';
+  document.querySelector('#title-container').innerHTML = '<h1>Rides</h1>';
   arr.forEach((item) => {
     document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem;">
     <img src="${item.image}" class="card-img-top" alt="${item.name}">
