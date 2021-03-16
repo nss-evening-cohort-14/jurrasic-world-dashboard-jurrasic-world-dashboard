@@ -10,6 +10,12 @@ const domEvents = () => {
     // STAFF
 
     // VENDORS
+    if (e.target.id.includes('delete-vendor')) {
+      console.warn('DELETE VENDOR');
+    }
+    if (e.target.id.includes('edit-vendor')) {
+      console.warn('EDIT VENDOR');
+    }
   });
 };
 

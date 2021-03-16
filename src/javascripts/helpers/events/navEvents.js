@@ -1,3 +1,5 @@
+import vendorPage from '../../components/vendor';
+
 const navigationEvents = () => {
   document.querySelector('#dinosaurs').addEventListener('click', () => {
     console.warn('CONNECTED');
@@ -8,7 +10,8 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#vendors').addEventListener('click', () => {
-    console.warn('CONNECTED');
+    console.warn('VENDORS');
+    vendorPage();
   });
 
   document.querySelector('#equipment').addEventListener('click', () => {
