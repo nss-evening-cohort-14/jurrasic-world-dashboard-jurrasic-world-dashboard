@@ -1,3 +1,6 @@
+import showRides from '../../components/rides';
+import getRides from '../ridesData';
+
 const navigationEvents = () => {
   document.querySelector('#dinosaurs').addEventListener('click', () => {
     console.warn('CONNECTED');
@@ -16,7 +19,7 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#rides').addEventListener('click', () => {
-    console.warn('CONNECTED');
+    getRides().then((ridesArray) => showRides(ridesArray));
   });
 };
 
