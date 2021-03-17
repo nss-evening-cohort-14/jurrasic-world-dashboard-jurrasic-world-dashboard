@@ -1,3 +1,5 @@
+import { emptyEquipment, showEquipment } from '../../components/equipment';
+import getEquipment from '../equipmentData';
 import showVendors from '../../components/vendor';
 import { showRides, emptyRides } from '../../components/rides';
 import getRides from '../ridesData';
@@ -41,7 +43,13 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#equipment').addEventListener('click', () => {
-    console.warn('CONNECTED');
+    getEquipment().then((equipmentArray) => {
+      if (equipmentArray.length) {
+        showEquipment(equipmentArray);
+      } else {
+        emptyEquipment();
+      }
+    });
   });
 
   document.querySelector('#rides').addEventListener('click', () => {
