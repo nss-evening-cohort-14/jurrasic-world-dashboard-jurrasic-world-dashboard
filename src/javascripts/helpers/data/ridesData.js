@@ -1,10 +1,10 @@
 import axios from 'axios';
-import firebaseConfig from './apiKeys';
+import firebaseConfig from '../apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-const getEquipment = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/equipment.json`)
+const getRides = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/rides.json`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -14,4 +14,4 @@ const getEquipment = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default getEquipment;
+export default getRides;

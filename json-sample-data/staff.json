@@ -1,0 +1,42 @@
+{
+  "-MVszotOEsCYRuAkNxZD" : {
+    "description" : "Dr. Ellie Sattler has been invited back to the Park as a consultant to help relaunch the Jurassic Park operation",
+    "firebaseKey" : "-MVszotOEsCYRuAkNxZD",
+    "image" : "https://images.thestar.com/LrEOXBlg5vwmKAYTAYI5WXaOeaM=/1200x883/smart/filters:cb(1581013026214)/https://www.thestar.com/content/dam/thestar/entertainment/movies/2020/01/21/when-laura-dern-took-a-chance-on-a-satirical-film-with-a-rookie-director/lauradern.jpg",
+    "kidnapped" : false,
+    "name" : "Dr. Ellie Sattler",
+    "position" : "Paleobotanist"
+  },
+  "-MVt-yMUggtGQrkmb8Hc" : {
+    "description" : "Dr. Ian Malcom was invited to the island and has expressed skepticism of the Park's ability to control the animals they are breeding",
+    "firebaseKey" : "-MVt-yMUggtGQrkmb8Hc",
+    "image" : "https://deadline.com/wp-content/uploads/2017/04/rexfeatures_5886121s.jpg",
+    "kidnapped" : true,
+    "name" : "Dr. Ian Malcolm",
+    "position" : "Mathematician"
+  },
+  "-MVt2ZL1Hjo8nxMzlVjp" : {
+    "description" : "World renowned paleontologist who has been invited back to be a consultant for the Park",
+    "firebaseKey" : "-MVt2ZL1Hjo8nxMzlVjp",
+    "image" : "http://www.fedoras.com/blog/wp-content/uploads/2015/06/Alan-Grant-Jurassic-Park-Hat.png",
+    "kidnapped" : false,
+    "name" : "Alan Grant",
+    "position" : "Paleontologist"
+  },
+  "-MVt3QDOlHSJtXgsMvxu" : {
+    "description" : "Venture capitalist who is the CEO and creator of Jurassic Park",
+    "firebaseKey" : "-MVt3QDOlHSJtXgsMvxu",
+    "image" : "https://www.jurassic-pedia.com/wp-content/uploads/2011/03/hammond_1.png",
+    "kidnapped" : true,
+    "name" : "John Hammond",
+    "position" : "CEO of Jurassic Park"
+  },
+  "-MVt40RwwNPooZ4izd9y" : {
+    "description" : "Computer programmer for the Park and is trying to smuggle dinosaur embryos off the island",
+    "firebaseKey" : "-MVt40RwwNPooZ4izd9y",
+    "image" : "https://images.squarespace-cdn.com/content/v1/576a19ba46c3c4a46ff5bb79/1542643717545-AZK68JGE2I3A2X4XK3YX/ke17ZwdGBToddI8pDm48kFMpOcZHlTq_w4NItl336vZZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxZY5_tqj_k7S_qX7Glx3bDNV9sTtSXAgERKXdJKnhEgDDCg2nVq__Y5YORjujND-k/dennisnedry.jpg",
+    "kidnapped" : true,
+    "name" : "Dennis Nedry",
+    "position" : "Computer Programmer"
+  }
+}
