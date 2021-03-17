@@ -2,7 +2,7 @@ const showDinos = (array) => {
   // document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-board-btn">Add Dinosaur</button>';
   document.querySelector('#card-container').innerHTML = '';
   // document.querySelector('#form-container').innerHTML = '';
-  document.querySelector('#title-container').innerHTML = '<h1>DINOSAURS</h1>';
+  document.querySelector('#title-container').innerHTML = '<h1>Dinosaurs</h1>';
 
   array.forEach((item) => {
     document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem;">
