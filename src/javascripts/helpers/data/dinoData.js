@@ -27,4 +27,19 @@ const createDino = (dinoObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getDinos, createDino };
+const getSingleDino = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/dinosaurs/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
+const updateDino = (firebaseKey, dinoObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/dinosaurs/${firebaseKey}.json`, dinoObject)
+    .then(() => getDinos())
+    .then((dinosArray) => resolve(dinosArray))
+    .catch((error) => reject(error));
+});
+
+export {
+  getDinos, createDino, getSingleDino, updateDino
+};

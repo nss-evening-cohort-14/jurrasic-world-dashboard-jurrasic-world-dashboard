@@ -4,15 +4,18 @@ const showDinos = (array) => {
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#title-container').innerHTML = '<h1>Dinosaurs</h1>';
 
-  array.forEach((item) => {
+  array.forEach((dino) => {
     document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem;">
-      <img class="card-img-top" id="specific-dino^^${item.firebaseKey}" src=${item.image} alt=${item.species}>
+      <img class="card-img-top" src=${dino.image} alt=${dino.species}>
       <div class="card-body">
-        <h6 class="card-title">${item.species}</h6>
-        <h5 class="card-title">Height: ${item.height}</h5>
-        <h5 class="card-title">Weight: ${item.weight}</h5>
-        <h6 class="card-title">Diet: ${item.diet}</h6>
-        <button class='btn btn-danger btn-sm' id='delete-dino--${item.firebaseKey}'>Delete Dino</button>
+        <h5 class="card-title">${dino.species}</h5>
+        <h6 class="card-title">Height: ${dino.height}</h6>
+        <h6 class="card-title">Weight: ${dino.weight}</h6>
+        <h6 class="card-title">Diet: ${dino.diet}</h6>
+        <div class="mt-auto">
+          <a href="#" id="update-dino-btn--${dino.firebaseKey}" class="btn btn-primary mx-2">Update</a>
+          <a href="#" id="delete-dino-btn--${dino.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
+        </div>
       </div>
     </div>`;
   });
