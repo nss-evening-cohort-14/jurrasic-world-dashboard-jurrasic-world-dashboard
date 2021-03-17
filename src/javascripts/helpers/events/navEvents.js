@@ -1,3 +1,5 @@
+import { showRides, emptyRides } from '../../components/rides';
+import getRides from '../ridesData';
 import { emptyDinos, showDinos } from '../../components/cards/dinos';
 import getDinos from '../data/dinoData';
 import { showStaff, emptyStaff } from '../../components/cards/staff';
@@ -42,7 +44,13 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#rides').addEventListener('click', () => {
-    console.warn('CONNECTED');
+    getRides().then((ridesArray) => {
+      if (ridesArray.length) {
+        showRides(ridesArray);
+      } else {
+        emptyRides();
+      }
+    });
   });
 };
 
