@@ -14,4 +14,15 @@ const getRides = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default getRides;
+const createRides = (rideObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/rides.json`, rideObj)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/rides/${response.data.name}.json`, body)
+        .then(() => {
+          getRides().then((ridesArray) => resolve(ridesArray));
+        });
+    }).catch((error) => reject(error));
+});
+
+export { getRides, createRides };
