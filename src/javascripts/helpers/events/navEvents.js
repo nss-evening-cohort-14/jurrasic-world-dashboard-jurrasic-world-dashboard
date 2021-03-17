@@ -1,4 +1,4 @@
-import vendorPage from '../../components/vendor';
+import showVendors from '../../components/vendor';
 import { showRides, emptyRides } from '../../components/rides';
 import getRides from '../ridesData';
 import { emptyDinos, showDinos } from '../../components/cards/dinos';
@@ -37,8 +37,7 @@ const navigationEvents = () => {
   });
 
   document.querySelector('#vendors').addEventListener('click', () => {
-    console.warn('VENDORS');
-    vendorPage();
+    showVendors();
   });
 
   document.querySelector('#equipment').addEventListener('click', () => {
