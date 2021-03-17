@@ -1,4 +1,6 @@
 const showDinos = (array) => {
+  document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-dino-btn">Add Dino</button>';
+  document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#title-container').innerHTML = '<h1>Dinosaurs</h1>';
 

@@ -16,4 +16,15 @@ const getDinos = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default getDinos;
+const createDino = (dinoObject) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/dinosaurs.json`, dinoObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/dinosaurs/${response.data.name}.json`, body)
+        .then(() => {
+          getDinos().then((dinosArray) => resolve(dinosArray));
+        });
+    }).catch((error) => reject(error));
+});
+
+export { getDinos, createDino };
