@@ -1,0 +1,30 @@
+{
+  "-MVsikuDpXdFkg4wEd1T" : {
+    "description" : "Great tacos and other food from a popular Costa Rica vendor",
+    "firebaseKey" : "-MVsikuDpXdFkg4wEd1T",
+    "imageUrl" : "https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/03/eat-my-taco.jpg",
+    "name" : "Eat My Taco",
+    "products" : "Tacos"
+  },
+  "-MVsj5BJeio4gAdEBezF" : {
+    "description" : "Owned by a sweet young couple, the Shrimp Hole is a tiny, but inviting little shack with a cozy deck, one street up from Tamarindo Beach",
+    "firebaseKey" : "-MVsj5BJeio4gAdEBezF",
+    "imageUrl" : "https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/03/shrimp-hole-.jpg",
+    "name" : "Shrimp Hole",
+    "products" : "shrimp and other seafoods"
+  },
+  "-MVsjz8QH7qN9Aulvcpg" : {
+    "description" : "Converted red VW camper burger food truck based in Tamarindo",
+    "firebaseKey" : "-MVsjz8QH7qN9Aulvcpg",
+    "imageUrl" : "https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/03/perfect-burger.jpg",
+    "name" : "Perfect Burger",
+    "products" : "Hamburgers"
+  },
+  "-MVslcMaMcuARLj-4EKZ" : {
+    "description" : "Store that was trashed in the brawl between Tyrannosaurus rex Roberta, Velociraptor Blue and Indominus rex.",
+    "firebaseKey" : "-MVslcMaMcuARLj-4EKZ",
+    "imageUrl" : "http://www.jurassic-pedia.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-21-at-8.15.17-AM-150x150.png",
+    "name" : "Jurassic Trader's Gift Shop",
+    "products" : "Jurassic World licensed toys, hats and apparel"
+  }
+}
