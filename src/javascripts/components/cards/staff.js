@@ -12,7 +12,6 @@ const showStaff = (array) => {
       <p class="card-text">${staff.description}</p>
       <div class="mt-auto">
         <a href="#" id="staff-update-btn--${staff.firebaseKey}" class="btn btn-primary mx-2">Update</a>
-        <a href="#" id="staff-delete-btn--${staff.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
       </div>
     </div>
   </div>`;

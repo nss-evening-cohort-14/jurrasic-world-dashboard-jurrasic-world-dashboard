@@ -17,6 +17,13 @@ const getStaff = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+// GET SINGLE STAFF MEMBER
+const getSingleStaffMember = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/staff/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
 // CREATE STAFF
 const createStaff = (staffObject) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/staff.json`, staffObject)
@@ -29,4 +36,13 @@ const createStaff = (staffObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getStaff, createStaff };
+// UPDATE STAFF
+const updateStaff = (firebaseKey, staffObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/staff/${firebaseKey}.json`, staffObject)
+    .then(() => getStaff()).then((staffArray) => resolve(staffArray))
+    .catch((error) => reject(error));
+});
+
+export {
+  getStaff, createStaff, updateStaff, getSingleStaffMember
+};
