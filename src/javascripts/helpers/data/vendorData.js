@@ -13,4 +13,17 @@ const getVendors = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default getVendors;
+const addVendor = (vendorObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/vendors.json`, vendorObj)
+    .then((response) => {
+      const keyObj = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/vendors/${response.data.name}.json`, keyObj)
+        .then(() => {
+          getVendors()
+            .then((vendorsArr) => resolve(vendorsArr))
+            .catch((error) => reject(error));
+        });
+    });
+});
+
+export { getVendors, addVendor };
