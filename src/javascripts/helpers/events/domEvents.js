@@ -4,7 +4,9 @@ import showVendors from '../../components/vendor';
 import updateVendorForm from '../../components/forms/updateVendorForm';
 import { showRides } from '../../components/cards/rides';
 import addRideForm from '../../components/forms/addRideForm';
-import { createRides, updateRides, getSingleRide } from '../data/ridesData';
+import {
+  createRides, updateRides, getSingleRide, deleteRide
+} from '../data/ridesData';
 import editRideForm from '../../components/forms/editRideForm';
 import addStaffForm from '../../components/forms/addStaffForm';
 import { createStaff, getSingleStaffMember, updateStaff } from '../data/staffData';
@@ -132,6 +134,11 @@ const domEvents = () => {
       };
       updateRides(rideObj, firebaseKey).then((ridesArray) => showRides(ridesArray));
       $('#formModal').modal('toggle');
+    }
+
+    if (e.target.id.includes('delete-ride')) {
+      const firebasekey = e.target.id.split('--')[1];
+      deleteRide(firebasekey).then((ridesArray) => showRides(ridesArray));
     }
 
     // STAFF
