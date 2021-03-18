@@ -9,8 +9,10 @@ const showRides = (arr) => {
     <div class="card-body">
       <h5 class="card-title">${item.name}</h5>
       <p class="card-text">${item.description}</p>
-      <a href="#" class="btn btn-primary" id="edit-ride--${item.firebaseKey}">Edit</a>
-      <a href="#" class="btn btn-danger" id="delete-ride--${item.firebaseKey}">Delete</a>
+      <div class="mt-auto">
+        <a href="#" class="btn btn-primary mx-2" id="edit-ride--${item.firebaseKey}">Edit</a>
+        <a href="#" class="btn btn-danger mx-2" id="delete-ride--${item.firebaseKey}">Delete</a>
+      </div>
     </div>
   </div>`;
   });

@@ -1,4 +1,6 @@
 const showEquipment = (arr) => {
+  document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-equipment-btn">Add Equipment</button>';
+  document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#title-container').innerHTML = '<h1>Equipment</h1>';
   arr.forEach((item) => {
@@ -7,7 +9,10 @@ const showEquipment = (arr) => {
     <div class="card-body">
       <h5 class="card-title">${item.title}</h5>
       <p class="card-text">${item.description}.</p>
-      <a href="#" class="btn btn-primary" id="deleteEquipment--${item.firebaseKey}">Delete</a>
+      <div class="mt-auto">
+          <a href="#" id="update-equipment-btn--${item.firebaseKey}" class="btn btn-primary mx-2">Update</a>
+          <a href="#" id="delete-equipment--${item.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
+        </div>
     </div>
   </div>`;
   });

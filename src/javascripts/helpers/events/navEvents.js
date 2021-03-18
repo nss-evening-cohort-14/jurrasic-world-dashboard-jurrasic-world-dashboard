@@ -1,5 +1,5 @@
 import { emptyEquipment, showEquipment } from '../../components/cards/equipment';
-import getEquipment from '../data/equipmentData';
+import { getEquipment } from '../data/equipmentData';
 import showVendors from '../../components/vendor';
 import { showRides, emptyRides } from '../../components/cards/rides';
 import { getRides } from '../data/ridesData';
