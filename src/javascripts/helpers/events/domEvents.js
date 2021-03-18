@@ -1,5 +1,8 @@
 import addVendorForm from '../../components/forms/vendorForms';
-import { addVendor, getSingleVendor, updateVendor } from '../data/vendorData';
+import {
+  addVendor, deleteVendor,
+  getSingleVendor, updateVendor
+} from '../data/vendorData';
 import showVendors from '../../components/vendor';
 import updateVendorForm from '../../components/forms/updateVendorForm';
 import { showRides } from '../../components/cards/rides';
@@ -179,8 +182,10 @@ const domEvents = () => {
       addVendorForm();
     }
     if (e.target.id.includes('delete-vendor')) {
+      e.preventDefault();
       const firebaseKey = e.target.id.split('--')[1];
       console.warn(firebaseKey);
+      deleteVendor(firebaseKey).then((vendorArr) => showVendors(vendorArr));
     }
     if (e.target.id.includes('submit-add-vendor')) {
       e.preventDefault();
@@ -191,8 +196,8 @@ const domEvents = () => {
         imageUrl: document.querySelector('#vendor-image-url').value
       };
       if (vendorObj.name && vendorObj.description) {
-        addVendor(vendorObj).then(() => {
-          showVendors();
+        addVendor(vendorObj).then((vendorArr) => {
+          showVendors(vendorArr);
         });
       }
       $('#formModal').modal('toggle');
@@ -205,6 +210,7 @@ const domEvents = () => {
       });
     }
     if (e.target.id.includes('submit-update-vendor')) {
+      e.preventDefault();
       const firebaseKey = e.target.id.split('--')[1];
       const vendorObj = {
         name: document.querySelector('#vendor-name').value,
@@ -213,8 +219,8 @@ const domEvents = () => {
         imageUrl: document.querySelector('#vendor-image-url').value
       };
       if (vendorObj.name && vendorObj.description) {
-        updateVendor(firebaseKey, vendorObj).then(() => {
-          showVendors();
+        updateVendor(firebaseKey, vendorObj).then((vendorArr) => {
+          showVendors(vendorArr);
         });
       }
       $('#formModal').modal('toggle');
