@@ -18,6 +18,7 @@ const domEvents = () => {
     if (e.target.id.includes('submit-ride')) {
       e.preventDefault();
       const rideObj = {
+        broken: false,
         name: document.querySelector('#ride-name').value,
         image: document.querySelector('#ride-image').value,
         description: document.querySelector('#ride-description').value
