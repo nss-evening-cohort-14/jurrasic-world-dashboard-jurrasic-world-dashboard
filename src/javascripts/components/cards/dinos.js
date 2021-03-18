@@ -1,5 +1,5 @@
 const showDinos = (array) => {
-  document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-dino-btn">Add Dino</button>';
+  document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" data-toggle="modal" data-target="#formModal" id="add-dino-btn">Add Dino</button>';
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#title-container').innerHTML = '<h1>Dinosaurs</h1>';
@@ -13,7 +13,7 @@ const showDinos = (array) => {
         <h6 class="card-title">Weight: ${dino.weight}</h6>
         <h6 class="card-title">Diet: ${dino.diet}</h6>
         <div class="mt-auto">
-          <a href="#" id="update-dino-btn--${dino.firebaseKey}" class="btn btn-primary mx-2">Update</a>
+          <a href="#" id="update-dino-btn--${dino.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
           <a href="#" id="delete-dino-btn--${dino.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
         </div>
       </div>

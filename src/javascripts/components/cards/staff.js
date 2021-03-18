@@ -1,6 +1,6 @@
 const showStaff = (array) => {
   document.querySelector('#title-container').innerHTML = '<h1>Staff</h1>';
-  document.querySelector('#add-button').innerHTML = '<button type="button" id="add-staff-btn" class="btn btn-danger my-2">Add a Staff Member</button>';
+  document.querySelector('#add-button').innerHTML = '<button type="button" data-toggle="modal" data-target="#formModal" id="add-staff-btn" class="btn btn-danger my-2">Add a Staff Member</button>';
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#card-container').innerHTML = '';
 
@@ -12,7 +12,7 @@ const showStaff = (array) => {
       <h5>${staff.position}</h5>
       <p class="card-text">${staff.description}</p>
       <div class="mt-auto">
-        <a href="#" id="staff-update-btn--${staff.firebaseKey}" class="btn btn-primary mx-2">Update</a>
+        <a href="#" id="staff-update-btn--${staff.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
         <a href="#" id="staff-delete-btn--${staff.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
       </div>
     </div>

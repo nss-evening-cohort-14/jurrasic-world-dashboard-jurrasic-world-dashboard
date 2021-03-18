@@ -1,5 +1,5 @@
 const addVendorForm = () => {
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="edit-vendor-form" class="mb-4">
       <div class="form-group">
         <label for="vendor-name">Vendor Name</label>
@@ -21,13 +21,8 @@ const addVendorForm = () => {
         <input type="text" class="form-control" id="vendor-image-url" 
           placeholder="Vendor Image URL" value="">
       </div>
-      <button type="button" id="close-add-vendor" class="btn btn-secondary">Close</button>
       <button type="submit" id="submit-add-vendor" class="btn btn-success">Add Vendor</button>
     </form>`;
 };
 
-const closeVendorForm = () => {
-  document.querySelector('#form-container').innerHTML = '';
-};
-
-export { addVendorForm, closeVendorForm };
+export default addVendorForm;

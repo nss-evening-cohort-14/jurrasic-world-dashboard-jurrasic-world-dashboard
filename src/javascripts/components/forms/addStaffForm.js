@@ -1,6 +1,5 @@
 const addStaffForm = () => {
-  document.querySelector('#form-container').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
   <form class="mt-1" style="width: 40%; margin: 0 auto;">
     <div class="form-group">
       <label for="name">Name</label>

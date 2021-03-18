@@ -1,7 +1,7 @@
 const updateDinoForm = (dinoObject) => {
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="update-dino-form" class="mb-4">
       <div class="form-group">
         <label for="image">Image URL</label>
