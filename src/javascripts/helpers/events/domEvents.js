@@ -2,7 +2,10 @@ import { addVendorForm, closeVendorForm } from '../../components/forms/vendorFor
 import { addVendor, getSingleVendor, updateVendor } from '../data/vendorData';
 import showVendors from '../../components/vendor';
 import { updateVendorForm, closeUpdateVendorForm } from '../../components/forms/updateVendorForm';
-// import formEvents from './formEvents';
+import { showRides } from '../../components/cards/rides';
+import addRideForm from '../../components/addRideForm';
+import { createRides, updateRides, getSingleRide } from '../data/ridesData';
+import editRideForm from '../../components/editRideForm';
 import addStaffForm from '../../components/forms/addStaffForm';
 import { createStaff, getSingleStaffMember, updateStaff } from '../data/staffData';
 import { showStaff } from '../../components/cards/staff';
@@ -86,6 +89,37 @@ const domEvents = () => {
       updateEquipment(firebaseKey, equipmentObject).then((equipmentArray) => showEquipment(equipmentArray));
     }
     // RIDES
+    if (e.target.id.includes('add-ride-btn')) {
+      addRideForm();
+    }
+
+    if (e.target.id.includes('submit-ride')) {
+      e.preventDefault();
+      const rideObj = {
+        broken: false,
+        name: document.querySelector('#ride-name').value,
+        image: document.querySelector('#ride-image').value,
+        description: document.querySelector('#ride-description').value
+      };
+      document.querySelector('form').reset();
+      createRides(rideObj).then((ridesArray) => showRides(ridesArray));
+    }
+
+    if (e.target.id.includes('edit-ride')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      getSingleRide(firebaseKey).then((rideObj) => editRideForm(rideObj));
+    }
+
+    if (e.target.id.includes('update-ride')) {
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      const rideObj = {
+        name: document.querySelector('#ride-name').value,
+        image: document.querySelector('#ride-image').value,
+        description: document.querySelector('#ride-description').value
+      };
+      updateRides(rideObj, firebaseKey).then((ridesArray) => showRides(ridesArray));
+    }
 
     // STAFF
     if (e.target.id.includes('add-staff-btn')) {
@@ -162,7 +196,6 @@ const domEvents = () => {
         products: document.querySelector('#vendor-products').value,
         imageUrl: document.querySelector('#vendor-image-url').value
       };
-      console.warn(vendorObj);
       if (vendorObj.name && vendorObj.description) {
         updateVendor(firebaseKey, vendorObj).then(() => {
           showVendors();

@@ -36,7 +36,6 @@ const addVendor = (vendorObj) => new Promise((resolve, reject) => {
 });
 
 const updateVendor = (firebaseKey, vendorObj) => new Promise((resolve, reject) => {
-  console.warn(vendorObj);
   axios.patch(`${dbUrl}/vendors/${firebaseKey}.json`, vendorObj)
     .then(() => getVendors().then((vendorArr) => resolve(vendorArr))
       .catch((error) => reject(error)));
