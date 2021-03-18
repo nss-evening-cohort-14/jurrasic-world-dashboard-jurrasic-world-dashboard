@@ -10,7 +10,9 @@ import addStaffForm from '../../components/forms/addStaffForm';
 import { createStaff, getSingleStaffMember, updateStaff } from '../data/staffData';
 import { showStaff } from '../../components/cards/staff';
 import updateStaffForm from '../../components/forms/updateStaffForm';
-import { createDino, getSingleDino, updateDino } from '../data/dinoData';
+import {
+  createDino, deleteDino, getSingleDino, updateDino
+} from '../data/dinoData';
 import { showDinos } from '../../components/cards/dinos';
 import addDinoForm from '../../components/forms/addDinoForm';
 import updateDinoForm from '../../components/forms/updateDinoForm';
@@ -61,6 +63,15 @@ const domEvents = () => {
       updateDino(firebaseKey, dinoObject).then((dinosArray) => showDinos(dinosArray));
       $('#formModal').modal('toggle');
     }
+
+    if (e.target.id.includes('delete-dino-btn')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        const firebaseKey = e.target.id.split('--')[1];
+        deleteDino(firebaseKey).then((dinosArray) => showDinos(dinosArray));
+      }
+    }
+
     // EQUIPMENT
     if (e.target.id.includes('add-equipment-btn')) {
       formModal('Add Equipment');
