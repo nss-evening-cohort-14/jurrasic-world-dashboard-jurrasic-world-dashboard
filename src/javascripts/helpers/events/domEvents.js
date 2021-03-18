@@ -31,7 +31,7 @@ const domEvents = () => {
       getSingleDino(firebaseKey).then((dinoObject) => updateDinoForm(dinoObject));
     }
 
-    if (e.target.id.includes('update-dino')) {
+    if (e.target.id.includes('edit-dino')) {
       const firebaseKey = e.target.id.split('--')[1];
       e.preventDefault();
       const dinoObject = {
@@ -52,6 +52,7 @@ const domEvents = () => {
     if (e.target.id.includes('submit-equipment')) {
       e.preventDefault();
       const equipmentObject = {
+        broken: false,
         title: document.querySelector('#title').value,
         description: document.querySelector('#description').value,
         image: document.querySelector('#image').value
@@ -64,7 +65,7 @@ const domEvents = () => {
       getSingleEquipment(firebaseKey).then((equipmentObject) => updateEquipmentForm(equipmentObject));
     }
 
-    if (e.target.id.includes('update-equipment')) {
+    if (e.target.id.includes('edit-equipment')) {
       const firebaseKey = e.target.id.split('--')[1];
       e.preventDefault();
       const equipmentObject = {

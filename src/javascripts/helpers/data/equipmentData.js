@@ -33,8 +33,7 @@ const getSingleEquipment = (firebaseKey) => new Promise((resolve, reject) => {
 
 const updateEquipment = (firebaseKey, equipmentObject) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/equipment/${firebaseKey}.json`, equipmentObject)
-    .then(() => getEquipment())
-    .then((equipmentArray) => resolve(equipmentArray))
+    .then(() => getEquipment()).then((equipmentArray) => resolve(equipmentArray))
     .catch((error) => reject(error));
 });
 

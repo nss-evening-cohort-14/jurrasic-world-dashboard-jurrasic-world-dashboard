@@ -35,9 +35,9 @@ const getSingleDino = (firebaseKey) => new Promise((resolve, reject) => {
 
 const updateDino = (firebaseKey, dinoObject) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/dinosaurs/${firebaseKey}.json`, dinoObject)
-    .then(() => getDinos())
-    .then((dinosArray) => resolve(dinosArray))
-    .catch((error) => reject(error));
+    .then(() => {
+      getDinos().then((dinosArray) => resolve(dinosArray));
+    }).catch((error) => reject(error));
 });
 
 export {

@@ -23,7 +23,7 @@ const updateDinoForm = (dinoObject) => {
         <label for="title">Dino Diet</label>
         <input type="text" class="form-control" id="diet" aria-describedby="dinoDiet" placeholder="Enter Dino Diet" value="${dinoObject.diet}" required>
       </div>
-      <button type="submit" id="update-dino--${dinoObject.firebaseKey}" class="btn btn-primary">Update Dino</button>
+      <button type="submit" id="edit-dino--${dinoObject.firebaseKey}" class="btn btn-primary">Update Dino</button>
     </form>`;
 };
 

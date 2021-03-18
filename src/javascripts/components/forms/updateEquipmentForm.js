@@ -15,7 +15,7 @@ const updateEquipmentForm = (equipmentObject) => {
         <label for="title">Description</label>
         <input type="text" class="form-control" id="description" aria-describedby="description" placeholder="Enter Equipment Description"  value="${equipmentObject.description}" required>
       </div>
-      <button type="submit" id="update-equipment" class="btn btn-primary">Update Equipment</button>
+      <button type="submit" id="edit-equipment--${equipmentObject.firebaseKey}" class="btn btn-primary">Update Equipment</button>
     </form>`;
 };
 
