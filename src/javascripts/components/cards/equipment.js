@@ -11,7 +11,7 @@ const showEquipment = (arr) => {
         <p class="card-text">${item.description}.</p>
         <div class="mt-auto">
           <a href="#" id="update-equipment-btn--${item.firebaseKey}" class="btn btn-primary mx-2">Update</a>
-          <a href="#" id="delete-equipment--${item.firebaseKey}" class="btn btn-primary mx-2">Delete</a>
+          <a href="#" id="delete-equipment--${item.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
         </div>
       </div>
     </div>`;
