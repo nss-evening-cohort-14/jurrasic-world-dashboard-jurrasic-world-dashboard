@@ -1,5 +1,3 @@
-// updateVendorForm.js
-
 const updateVendorForm = (vendorObj) => {
   document.querySelector('#modal-body').innerHTML = `
     <form id="update-vendor-form" class="mb-4">
@@ -27,8 +25,4 @@ const updateVendorForm = (vendorObj) => {
     </form>`;
 };
 
-const closeUpdateVendorForm = () => {
-  document.querySelector('#form-container').innerHTML = '';
-};
-
-export { updateVendorForm, closeUpdateVendorForm };
+export default updateVendorForm;

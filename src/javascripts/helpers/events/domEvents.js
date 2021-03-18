@@ -1,7 +1,7 @@
-import { addVendorForm, closeVendorForm } from '../../components/forms/vendorForms';
+import addVendorForm from '../../components/forms/vendorForms';
 import { addVendor, getSingleVendor, updateVendor } from '../data/vendorData';
 import showVendors from '../../components/vendor';
-import { updateVendorForm, closeUpdateVendorForm } from '../../components/forms/updateVendorForm';
+import updateVendorForm from '../../components/forms/updateVendorForm';
 import { showRides } from '../../components/cards/rides';
 import addRideForm from '../../components/forms/addRideForm';
 import { createRides, updateRides, getSingleRide } from '../data/ridesData';
@@ -193,13 +193,9 @@ const domEvents = () => {
       if (vendorObj.name && vendorObj.description) {
         addVendor(vendorObj).then(() => {
           showVendors();
-          closeVendorForm();
         });
       }
       $('#formModal').modal('toggle');
-    }
-    if (e.target.id.includes('close-add-vendor')) {
-      closeVendorForm();
     }
     if (e.target.id.includes('edit-vendor')) {
       const firebaseKey = e.target.id.split('--')[1];
@@ -219,13 +215,9 @@ const domEvents = () => {
       if (vendorObj.name && vendorObj.description) {
         updateVendor(firebaseKey, vendorObj).then(() => {
           showVendors();
-          closeUpdateVendorForm();
         });
       }
       $('#formModal').modal('toggle');
-    }
-    if (e.target.id.includes('close-update-vendor')) {
-      closeUpdateVendorForm();
     }
   });
 };

@@ -25,8 +25,4 @@ const addVendorForm = () => {
     </form>`;
 };
 
-const closeVendorForm = () => {
-  document.querySelector('#form-container').innerHTML = '';
-};
-
-export { addVendorForm, closeVendorForm };
+export default addVendorForm;
