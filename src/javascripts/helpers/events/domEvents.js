@@ -1,11 +1,11 @@
-import { addVendorForm, closeVendorForm } from '../../components/forms/vendorForms';
+import addVendorForm from '../../components/forms/vendorForms';
 import { addVendor, getSingleVendor, updateVendor } from '../data/vendorData';
 import showVendors from '../../components/vendor';
-import { updateVendorForm, closeUpdateVendorForm } from '../../components/forms/updateVendorForm';
+import updateVendorForm from '../../components/forms/updateVendorForm';
 import { showRides } from '../../components/cards/rides';
-import addRideForm from '../../components/addRideForm';
+import addRideForm from '../../components/forms/addRideForm';
 import { createRides, updateRides, getSingleRide } from '../data/ridesData';
-import editRideForm from '../../components/editRideForm';
+import editRideForm from '../../components/forms/editRideForm';
 import addStaffForm from '../../components/forms/addStaffForm';
 import { createStaff, getSingleStaffMember, updateStaff } from '../data/staffData';
 import { showStaff } from '../../components/cards/staff';
@@ -18,11 +18,13 @@ import { showEquipment } from '../../components/cards/equipment';
 import addEquipmentForm from '../../components/forms/addEquipmentFrom';
 import { createEquipment, getSingleEquipment, updateEquipment } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
+import formModal from '../../components/forms/formModal';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
     // DINOSAURS
     if (e.target.id.includes('add-dino-btn')) {
+      formModal('Add a Dino');
       addDinoForm();
     }
 
@@ -36,10 +38,12 @@ const domEvents = () => {
         species: document.querySelector('#species').value
       };
       createDino(dinoObject).then((dinoArray) => showDinos(dinoArray));
+      $('#formModal').modal('toggle');
     }
 
     if (e.target.id.includes('update-dino-btn')) {
       const firebaseKey = e.target.id.split('--')[1];
+      formModal('Update Dinos');
       getSingleDino(firebaseKey).then((dinoObject) => updateDinoForm(dinoObject));
     }
 
@@ -55,9 +59,11 @@ const domEvents = () => {
       };
 
       updateDino(firebaseKey, dinoObject).then((dinosArray) => showDinos(dinosArray));
+      $('#formModal').modal('toggle');
     }
     // EQUIPMENT
     if (e.target.id.includes('add-equipment-btn')) {
+      formModal('Add Equipment');
       addEquipmentForm();
     }
 
@@ -70,10 +76,12 @@ const domEvents = () => {
         image: document.querySelector('#image').value
       };
       createEquipment(equipmentObject).then((equipmentArray) => showEquipment(equipmentArray));
+      $('#formModal').modal('toggle');
     }
 
     if (e.target.id.includes('update-equipment-btn')) {
       const firebaseKey = e.target.id.split('--')[1];
+      formModal('Update Equipment');
       getSingleEquipment(firebaseKey).then((equipmentObject) => updateEquipmentForm(equipmentObject));
     }
 
@@ -87,9 +95,11 @@ const domEvents = () => {
       };
 
       updateEquipment(firebaseKey, equipmentObject).then((equipmentArray) => showEquipment(equipmentArray));
+      $('#formModal').modal('toggle');
     }
     // RIDES
     if (e.target.id.includes('add-ride-btn')) {
+      formModal('Add a Ride');
       addRideForm();
     }
 
@@ -103,10 +113,12 @@ const domEvents = () => {
       };
       document.querySelector('form').reset();
       createRides(rideObj).then((ridesArray) => showRides(ridesArray));
+      $('#formModal').modal('toggle');
     }
 
     if (e.target.id.includes('edit-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
+      formModal('Update Ride');
       getSingleRide(firebaseKey).then((rideObj) => editRideForm(rideObj));
     }
 
@@ -119,10 +131,12 @@ const domEvents = () => {
         description: document.querySelector('#ride-description').value
       };
       updateRides(rideObj, firebaseKey).then((ridesArray) => showRides(ridesArray));
+      $('#formModal').modal('toggle');
     }
 
     // STAFF
     if (e.target.id.includes('add-staff-btn')) {
+      formModal('Add Staff Member');
       addStaffForm();
     }
 
@@ -137,10 +151,12 @@ const domEvents = () => {
       };
       createStaff(staffObject).then((staffArray) => showStaff(staffArray));
       document.querySelector('form').reset();
+      $('#formModal').modal('toggle');
     }
 
     if (e.target.id.includes('staff-update-btn')) {
       const firebaseKey = e.target.id.split('--')[1];
+      formModal('Update Staff Member');
       getSingleStaffMember(firebaseKey).then((staffObject) => updateStaffForm(staffObject));
     }
 
@@ -155,9 +171,11 @@ const domEvents = () => {
       };
 
       updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));
+      $('#formModal').modal('toggle');
     }
     // VENDORS
     if (e.target.id === 'new-vendor-btn') {
+      formModal('Add a Vendor');
       addVendorForm();
     }
     if (e.target.id.includes('delete-vendor')) {
@@ -175,15 +193,13 @@ const domEvents = () => {
       if (vendorObj.name && vendorObj.description) {
         addVendor(vendorObj).then(() => {
           showVendors();
-          closeVendorForm();
         });
       }
-    }
-    if (e.target.id.includes('close-add-vendor')) {
-      closeVendorForm();
+      $('#formModal').modal('toggle');
     }
     if (e.target.id.includes('edit-vendor')) {
       const firebaseKey = e.target.id.split('--')[1];
+      formModal('Add a Vendor');
       getSingleVendor(firebaseKey).then((vendorObj) => {
         updateVendorForm(vendorObj);
       });
@@ -199,12 +215,9 @@ const domEvents = () => {
       if (vendorObj.name && vendorObj.description) {
         updateVendor(firebaseKey, vendorObj).then(() => {
           showVendors();
-          closeUpdateVendorForm();
         });
       }
-    }
-    if (e.target.id.includes('close-update-vendor')) {
-      closeUpdateVendorForm();
+      $('#formModal').modal('toggle');
     }
   });
 };

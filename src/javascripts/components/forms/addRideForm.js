@@ -1,8 +1,5 @@
 const ridesForm = () => {
-  document.querySelector('#title-container').innerHTML = '';
-  document.querySelector('#card-container').innerHTML = '';
-  document.querySelector('#add-button').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = `<form>
+  document.querySelector('#modal-body').innerHTML = `<form>
   <div class="form-group">
     <label for="name">Ride Name</label>
     <input type="text" class="form-control" id="ride-name" aria-describedby="rideName">

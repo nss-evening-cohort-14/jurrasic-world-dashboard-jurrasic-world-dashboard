@@ -1,7 +1,5 @@
-// updateVendorForm.js
-
 const updateVendorForm = (vendorObj) => {
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="update-vendor-form" class="mb-4">
       <div class="form-group">
         <label for="vendor-name">Vendor Name</label>
@@ -23,13 +21,8 @@ const updateVendorForm = (vendorObj) => {
         <input type="text" class="form-control" id="vendor-image-url" 
           placeholder="Vendor Image URL" value="${vendorObj.imageUrl}">
       </div>
-      <button type="button" id="close-update-vendor" class="btn btn-secondary">Close</button>
-      <button type="submit" id="submit-update-vendor--${vendorObj.firebaseKey}" class="btn btn-success">Update Vendor</button>
+      <button type="submit" id="submit-update-vendor--${vendorObj.firebaseKey}" class="btn btn-success">Update</button>
     </form>`;
 };
 
-const closeUpdateVendorForm = () => {
-  document.querySelector('#form-container').innerHTML = '';
-};
-
-export { updateVendorForm, closeUpdateVendorForm };
+export default updateVendorForm;
