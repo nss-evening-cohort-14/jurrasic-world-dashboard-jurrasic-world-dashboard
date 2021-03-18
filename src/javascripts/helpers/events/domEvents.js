@@ -1,3 +1,7 @@
+import addStaffForm from '../../components/forms/addStaffForm';
+import { createStaff, getSingleStaffMember, updateStaff } from '../data/staffData';
+import { showStaff } from '../../components/cards/staff';
+import updateStaffForm from '../../components/forms/updateStaffForm';
 import { createDino, getSingleDino, updateDino } from '../data/dinoData';
 import { showDinos } from '../../components/cards/dinos';
 import addDinoForm from '../../components/forms/addDinoForm';
@@ -79,7 +83,40 @@ const domEvents = () => {
     // RIDES
 
     // STAFF
+    if (e.target.id.includes('add-staff-btn')) {
+      addStaffForm();
+    }
 
+    if (e.target.id.includes('submit-staff-btn')) {
+      e.preventDefault();
+      const staffObject = {
+        description: document.querySelector('#description').value,
+        image: document.querySelector('#image').value,
+        name: document.querySelector('#name').value,
+        position: document.querySelector('#position').value,
+        kidnapped: false
+      };
+      createStaff(staffObject).then((staffArray) => showStaff(staffArray));
+      document.querySelector('form').reset();
+    }
+
+    if (e.target.id.includes('staff-update-btn')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      getSingleStaffMember(firebaseKey).then((staffObject) => updateStaffForm(staffObject));
+    }
+
+    if (e.target.id.includes('submit-updated-staff-btn')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const staffObject = {
+        description: document.querySelector('#description').value,
+        image: document.querySelector('#image').value,
+        name: document.querySelector('#name').value,
+        position: document.querySelector('#position').value
+      };
+
+      updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));
+    }
     // VENDORS
     if (e.target.id.includes('delete-vendor')) {
       console.warn('DELETE VENDOR');
