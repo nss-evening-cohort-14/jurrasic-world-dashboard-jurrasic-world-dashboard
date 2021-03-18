@@ -13,7 +13,7 @@ const showRides = (arr) => {
       <div class="card-body">
         <h5 class="card-title">${item.name}</h5>
         <p class="card-text">${item.description}</p>
-        <div class="mt-auto" id="ride-buttons">
+        <div class="mt-auto">
           <a href="#" class="btn btn-primary mx-2" id="edit-ride--${item.firebaseKey}" data-toggle="modal" data-target="#formModal">Edit</a>
           <a href="#" class="btn btn-danger mx-2" id="delete-ride--${item.firebaseKey}">Delete</a>
         </div>
@@ -21,6 +21,7 @@ const showRides = (arr) => {
     </div>`;
     });
   } else {
+    document.querySelector('#add-button').innerHTML = '';
     arr.forEach((item) => {
       document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem;">
       <img src="${item.image}" class="card-img-top" alt="${item.name}">
