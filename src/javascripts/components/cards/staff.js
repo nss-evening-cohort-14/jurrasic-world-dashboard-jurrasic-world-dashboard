@@ -23,6 +23,7 @@ const showStaff = (array) => {
     </div>`;
     });
   } else {
+    document.querySelector('#add-button').innerHTML = '';
     array.forEach((staff) => {
       document.querySelector('#card-container').innerHTML += `
       <div class="card" style="width: 18rem; height: 31em">
