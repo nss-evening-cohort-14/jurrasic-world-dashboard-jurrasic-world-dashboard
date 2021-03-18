@@ -1,7 +1,5 @@
 const updateStaffForm = (staffObject) => {
-  document.querySelector('#card-container').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
   <form id ="update-staff-form" class="mt-1" style="width: 40%; margin: 0 auto;">
     <div class="form-group">
       <label for="name">Name</label>
@@ -19,7 +17,7 @@ const updateStaffForm = (staffObject) => {
       <label for="image">Image URL</label>
       <input type="url" class="form-control" id="image" placeholder="Image URL" value="${staffObject.image}">
     </div>
-    <button type="submit" id="submit-updated-staff-btn--${staffObject.firebaseKey}" class="btn btn-primary mt-2">Submit</button>
+    <button type="submit" id="submit-updated-staff-btn--${staffObject.firebaseKey}" class="btn btn-primary mt-2">Update</button>
   </form>
   `;
 };

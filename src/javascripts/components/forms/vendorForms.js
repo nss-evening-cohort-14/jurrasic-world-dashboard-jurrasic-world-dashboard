@@ -1,5 +1,5 @@
 const addVendorForm = () => {
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="edit-vendor-form" class="mb-4">
       <div class="form-group">
         <label for="vendor-name">Vendor Name</label>
