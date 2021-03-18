@@ -23,7 +23,7 @@ const domEvents = () => {
         image: document.querySelector('#image').value,
         name: document.querySelector('#name').value,
         position: document.querySelector('#position').value,
-        kidnapped: document.querySelector('#kidnapped').checked
+        kidnapped: false
       };
       createStaff(staffObject).then((staffArray) => showStaff(staffArray));
       document.querySelector('form').reset();
@@ -41,8 +41,7 @@ const domEvents = () => {
         description: document.querySelector('#description').value,
         image: document.querySelector('#image').value,
         name: document.querySelector('#name').value,
-        position: document.querySelector('#position').value,
-        kidnapped: document.querySelector('#kidnapped').checked
+        position: document.querySelector('#position').value
       };
 
       updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));

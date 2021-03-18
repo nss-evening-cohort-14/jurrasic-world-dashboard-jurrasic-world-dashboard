@@ -18,10 +18,6 @@ const addStaffForm = () => {
       <label for="image">Image URL</label>
       <input type="url" class="form-control" id="image" placeholder="Image URL">
     </div>
-    <div class="form-check text-left">
-      <input type="checkbox" class="form-check-input" id="kidnapped">
-      <label class="form-check-label" for="kidnapped">Kidnapped?</label>
-    </div>
     <button type="submit" id="submit-staff-btn" class="btn btn-primary mt-2">Submit</button>
   </form>
   `;
