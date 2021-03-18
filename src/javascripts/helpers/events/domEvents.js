@@ -1,3 +1,7 @@
+import { addVendorForm, closeVendorForm } from '../../components/forms/vendorForms';
+import { addVendor, getSingleVendor, updateVendor } from '../data/vendorData';
+import showVendors from '../../components/vendor';
+import { updateVendorForm, closeUpdateVendorForm } from '../../components/forms/updateVendorForm';
 import { showRides } from '../../components/cards/rides';
 import addRideForm from '../../components/addRideForm';
 import { createRides, updateRides, getSingleRide } from '../data/ridesData';
@@ -114,7 +118,6 @@ const domEvents = () => {
         image: document.querySelector('#ride-image').value,
         description: document.querySelector('#ride-description').value
       };
-      console.warn(firebaseKey);
       updateRides(rideObj, firebaseKey).then((ridesArray) => showRides(ridesArray));
     }
 
@@ -154,11 +157,54 @@ const domEvents = () => {
       updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));
     }
     // VENDORS
+    if (e.target.id === 'new-vendor-btn') {
+      addVendorForm();
+    }
     if (e.target.id.includes('delete-vendor')) {
-      console.warn('DELETE VENDOR');
+      const firebaseKey = e.target.id.split('--')[1];
+      console.warn(firebaseKey);
+    }
+    if (e.target.id.includes('submit-add-vendor')) {
+      e.preventDefault();
+      const vendorObj = {
+        name: document.querySelector('#vendor-name').value,
+        description: document.querySelector('#vendor-description').value,
+        products: document.querySelector('#vendor-products').value,
+        imageUrl: document.querySelector('#vendor-image-url').value
+      };
+      if (vendorObj.name && vendorObj.description) {
+        addVendor(vendorObj).then(() => {
+          showVendors();
+          closeVendorForm();
+        });
+      }
+    }
+    if (e.target.id.includes('close-add-vendor')) {
+      closeVendorForm();
     }
     if (e.target.id.includes('edit-vendor')) {
-      console.warn('EDIT VENDOR');
+      const firebaseKey = e.target.id.split('--')[1];
+      getSingleVendor(firebaseKey).then((vendorObj) => {
+        updateVendorForm(vendorObj);
+      });
+    }
+    if (e.target.id.includes('submit-update-vendor')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      const vendorObj = {
+        name: document.querySelector('#vendor-name').value,
+        description: document.querySelector('#vendor-description').value,
+        products: document.querySelector('#vendor-products').value,
+        imageUrl: document.querySelector('#vendor-image-url').value
+      };
+      if (vendorObj.name && vendorObj.description) {
+        updateVendor(firebaseKey, vendorObj).then(() => {
+          showVendors();
+          closeUpdateVendorForm();
+        });
+      }
+    }
+    if (e.target.id.includes('close-update-vendor')) {
+      closeUpdateVendorForm();
     }
   });
 };
