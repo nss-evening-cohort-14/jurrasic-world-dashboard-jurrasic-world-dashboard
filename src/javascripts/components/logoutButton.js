@@ -5,7 +5,6 @@ import { domEventsListener } from '../helpers/events/domEvents';
 const signMeOut = () => {
   document.querySelector('body').removeEventListener('click', domEventsListener);
   firebase.auth().signOut();
-  window.location.reload();
 };
 
 const logoutButton = () => {
