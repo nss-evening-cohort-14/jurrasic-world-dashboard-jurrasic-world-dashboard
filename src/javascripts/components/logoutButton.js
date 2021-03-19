@@ -1,7 +1,9 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { domEventsListener } from '../helpers/events/domEvents';
 
 const signMeOut = () => {
+  document.querySelector('body').removeEventListener('click', domEventsListener);
   firebase.auth().signOut();
 };
 
