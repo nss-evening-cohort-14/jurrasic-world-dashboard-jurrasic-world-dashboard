@@ -41,7 +41,14 @@ const updateVendor = (firebaseKey, vendorObj) => new Promise((resolve, reject) =
       .catch((error) => reject(error)));
 });
 
+const deleteVendor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/vendors/${firebaseKey}.json`)
+    .then(() => getVendors().then((vendorArr) => resolve(vendorArr))
+      .catch((error) => reject(error)));
+});
+
 export {
   getVendors, addVendor,
-  getSingleVendor, updateVendor
+  getSingleVendor, updateVendor,
+  deleteVendor
 };
