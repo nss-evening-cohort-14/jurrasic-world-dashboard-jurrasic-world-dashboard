@@ -1,6 +1,4 @@
 const updateDinoForm = (dinoObject) => {
-  document.querySelector('#card-container').innerHTML = '';
-  document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#modal-body').innerHTML = `
     <form id="update-dino-form" class="mb-4">
       <div class="form-group">

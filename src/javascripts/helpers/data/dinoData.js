@@ -40,6 +40,12 @@ const updateDino = (firebaseKey, dinoObject) => new Promise((resolve, reject) =>
     }).catch((error) => reject(error));
 });
 
+const deleteDino = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/dinosaurs/${firebaseKey}.json`)
+    .then(() => getDinos().then((dinosArray) => resolve(dinosArray)))
+    .catch((error) => reject(error));
+});
+
 export {
-  getDinos, createDino, getSingleDino, updateDino
+  getDinos, createDino, getSingleDino, updateDino, deleteDino
 };

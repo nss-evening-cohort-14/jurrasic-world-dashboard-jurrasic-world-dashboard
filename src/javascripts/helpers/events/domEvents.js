@@ -5,30 +5,78 @@ import {
 } from '../data/vendorData';
 import showVendors from '../../components/vendor';
 import updateVendorForm from '../../components/forms/updateVendorForm';
-import { showRides } from '../../components/cards/rides';
+import { emptyRides, showRides } from '../../components/cards/rides';
 import addRideForm from '../../components/forms/addRideForm';
-import { createRides, updateRides, getSingleRide } from '../data/ridesData';
+import {
+  createRides, updateRides, getSingleRide, deleteRide, getRides
+} from '../data/ridesData';
 import editRideForm from '../../components/forms/editRideForm';
 import addStaffForm from '../../components/forms/addStaffForm';
 import {
   createStaff, getSingleStaffMember, updateStaff,
-  deleteStaff
+  deleteStaff, getStaff
 } from '../data/staffData';
-import { showStaff } from '../../components/cards/staff';
+import { emptyStaff, showStaff } from '../../components/cards/staff';
 import updateStaffForm from '../../components/forms/updateStaffForm';
-import { createDino, getSingleDino, updateDino } from '../data/dinoData';
-import { showDinos } from '../../components/cards/dinos';
+import {
+  createDino, deleteDino, getDinos, getSingleDino, updateDino
+} from '../data/dinoData';
+import { emptyDinos, showDinos } from '../../components/cards/dinos';
 import addDinoForm from '../../components/forms/addDinoForm';
 import updateDinoForm from '../../components/forms/updateDinoForm';
-import { showEquipment } from '../../components/cards/equipment';
+import { emptyEquipment, showEquipment } from '../../components/cards/equipment';
 import addEquipmentForm from '../../components/forms/addEquipmentFrom';
 import {
-  createEquipment, getSingleEquipment, updateEquipment, deleteEquipment
+  createEquipment, getSingleEquipment, updateEquipment, deleteEquipment, getEquipment
 } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
 
 const domEventsListener = (e) => {
+  // LOAD PAGE CARDS
+  if (e.target.id.includes('-MW5Wenvcp9YhgEaOz79')) {
+    getDinos().then((dinosArray) => {
+      if (dinosArray.length) {
+        showDinos(dinosArray);
+      } else {
+        emptyDinos();
+      }
+    });
+  }
+
+  if (e.target.id.includes('-MW5Wenwp-atMNNLMqlW')) {
+    getStaff().then((staffArray) => {
+      if (staffArray.length) {
+        showStaff(staffArray);
+      } else {
+        emptyStaff();
+      }
+    });
+  }
+
+  if (e.target.id.includes('-MW5Wenwp-atMNNLMqlX')) {
+    showVendors();
+  }
+
+  if (e.target.id.includes('-MW5WenxyDSu15c-pi8R')) {
+    getEquipment().then((equipmentArray) => {
+      if (equipmentArray.length) {
+        showEquipment(equipmentArray);
+      } else {
+        emptyEquipment();
+      }
+    });
+  }
+
+  if (e.target.id.includes('-MW5WenyoBtn7HWyRVKc')) {
+    getRides().then((ridesArray) => {
+      if (ridesArray.length) {
+        showRides(ridesArray);
+      } else {
+        emptyRides();
+      }
+    });
+  }
   // DINOSAURS
   if (e.target.id.includes('add-dino-btn')) {
     formModal('Add a Dino');
@@ -68,12 +116,30 @@ const domEventsListener = (e) => {
     updateDino(firebaseKey, dinoObject).then((dinosArray) => showDinos(dinosArray));
     $('#formModal').modal('toggle');
   }
+
+  if (e.target.id.includes('delete-dino-btn')) {
+  // eslint-disable-next-line no-alert
+    if (window.confirm('Want to delete?')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteDino(firebaseKey).then((dinosArray) => showDinos(dinosArray));
+    }
+  }
   // EQUIPMENT
   if (e.target.id.includes('add-equipment-btn')) {
     formModal('Add Equipment');
     addEquipmentForm();
   }
 
+  if (e.target.id.includes('delete-ride')) {
+    const firebasekey = e.target.id.split('--')[1];
+    deleteRide(firebasekey).then((ridesArray) => showRides(ridesArray));
+  }
+
+  // STAFF
+  if (e.target.id.includes('add-staff-btn')) {
+    formModal('Add Staff Member');
+    addStaffForm();
+  }
   if (e.target.id.includes('submit-equipment')) {
     e.preventDefault();
     const equipmentObject = {
