@@ -6,7 +6,7 @@ const loadPage = (array) => {
 
   array.forEach((item) => {
     document.querySelector('#card-container').innerHTML += `<div class="card border-danger" id="view-card-style" style="width: 10rem;">
-      <a href="#"><img class="card-top-img" src=${item.image} id="${item.firebaseKey}" alt="View Card"></a>
+      <a href="#"><img class="card-top-img pt-2" src=${item.image} id="${item.firebaseKey}" alt="View Card" style="width: 70px; height: auto"></a>
       <div class="card-body">
         <a href="#"><h5 id="${item.firebaseKey}" class="title">${item.title}</h5></a>
       </div>

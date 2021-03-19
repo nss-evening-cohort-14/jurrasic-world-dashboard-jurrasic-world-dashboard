@@ -1,5 +1,3 @@
-// vendorCard.js
-
 import firebase from 'firebase';
 
 const vendorCard = (vendor) => {

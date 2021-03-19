@@ -1,7 +1,7 @@
 import addVendorForm from '../../components/forms/vendorForms';
 import {
   addVendor, deleteVendor,
-  getSingleVendor, updateVendor
+  getSingleVendor, getVendors, updateVendor
 } from '../data/vendorData';
 import showVendors from '../../components/vendor';
 import updateVendorForm from '../../components/forms/updateVendorForm';
@@ -55,7 +55,7 @@ const domEventsListener = (e) => {
   }
 
   if (e.target.id.includes('-MW5Wenwp-atMNNLMqlX')) {
-    showVendors();
+    getVendors().then((vendorArr) => showVendors(vendorArr));
   }
 
   if (e.target.id.includes('-MW5WenxyDSu15c-pi8R')) {
