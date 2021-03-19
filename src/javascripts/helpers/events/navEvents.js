@@ -35,7 +35,8 @@ const navigationEvents = () => {
     });
   });
 
-  document.querySelector('#vendors').addEventListener('click', () => {
+  document.querySelector('#vendors').addEventListener('click', (e) => {
+    e.preventDefault();
     getVendors().then((vendorArr) => showVendors(vendorArr));
   });
 
