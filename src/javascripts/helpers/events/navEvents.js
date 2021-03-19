@@ -28,7 +28,8 @@ const navigationEvents = () => {
     });
   });
 
-  document.querySelector('#staff').addEventListener('click', () => {
+  document.querySelector('#staff').addEventListener('click', (e) => {
+    e.preventDefault();
     document.querySelector('#title-container').innerHTML = '';
     getStaff().then((staffArray) => {
       if (staffArray.length) {
@@ -44,7 +45,8 @@ const navigationEvents = () => {
     getVendors().then((vendorArr) => showVendors(vendorArr));
   });
 
-  document.querySelector('#equipment').addEventListener('click', () => {
+  document.querySelector('#equipment').addEventListener('click', (e) => {
+    e.preventDefault();
     getEquipment().then((equipmentArray) => {
       if (equipmentArray.length) {
         showEquipment(equipmentArray);
@@ -54,7 +56,8 @@ const navigationEvents = () => {
     });
   });
 
-  document.querySelector('#rides').addEventListener('click', () => {
+  document.querySelector('#rides').addEventListener('click', (e) => {
+    e.preventDefault();
     getRides().then((ridesArray) => {
       if (ridesArray.length) {
         showRides(ridesArray);
