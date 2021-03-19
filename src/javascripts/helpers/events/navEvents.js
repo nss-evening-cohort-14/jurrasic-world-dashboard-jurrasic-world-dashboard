@@ -9,6 +9,7 @@ import { showStaff, emptyStaff } from '../../components/cards/staff';
 import { getStaff } from '../data/staffData';
 import loadPage from '../../components/loadPage';
 import getLoadCards from '../data/loadData';
+import { getVendors } from '../data/vendorData';
 
 const navigationEvents = () => {
   document.querySelector('#home').addEventListener('click', () => {
@@ -38,8 +39,9 @@ const navigationEvents = () => {
     });
   });
 
-  document.querySelector('#vendors').addEventListener('click', () => {
-    showVendors();
+  document.querySelector('#vendors').addEventListener('click', (e) => {
+    e.preventDefault();
+    getVendors().then((vendorArr) => showVendors(vendorArr));
   });
 
   document.querySelector('#equipment').addEventListener('click', () => {
