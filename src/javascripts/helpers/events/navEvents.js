@@ -7,20 +7,25 @@ import { emptyDinos, showDinos } from '../../components/cards/dinos';
 import { getDinos } from '../data/dinoData';
 import { showStaff, emptyStaff } from '../../components/cards/staff';
 import { getStaff } from '../data/staffData';
+import loadPage from '../../components/loadPage';
+import getLoadCards from '../data/loadData';
+import { getVendors } from '../data/vendorData';
 
 const navigationEvents = () => {
-  document.querySelector('#dinosaurs').addEventListener('click', (e) => {
-    if (e.target.id.includes('dinosaurs')) {
-      e.preventDefault();
-      document.querySelector('#card-container').innerHTML = '';
-      getDinos().then((dinosArray) => {
-        if (dinosArray.length) {
-          showDinos(dinosArray);
-        } else {
-          emptyDinos();
-        }
-      });
-    }
+  document.querySelector('#home').addEventListener('click', () => {
+    getLoadCards().then((cardArray) => {
+      loadPage(cardArray);
+    });
+  });
+
+  document.querySelector('#dinosaurs').addEventListener('click', () => {
+    getDinos().then((dinosArray) => {
+      if (dinosArray.length) {
+        showDinos(dinosArray);
+      } else {
+        emptyDinos();
+      }
+    });
   });
 
   document.querySelector('#staff').addEventListener('click', (e) => {
@@ -37,7 +42,7 @@ const navigationEvents = () => {
 
   document.querySelector('#vendors').addEventListener('click', (e) => {
     e.preventDefault();
-    showVendors();
+    getVendors().then((vendorArr) => showVendors(vendorArr));
   });
 
   document.querySelector('#equipment').addEventListener('click', (e) => {

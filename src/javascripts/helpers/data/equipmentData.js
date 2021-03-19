@@ -37,9 +37,16 @@ const updateEquipment = (firebaseKey, equipmentObject) => new Promise((resolve, 
     .catch((error) => reject(error));
 });
 
+const deleteEquipment = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/equipment/${firebaseKey}.json`)
+    .then(() => getEquipment().then((equipmentArray) => resolve(equipmentArray)))
+    .catch((error) => reject(error));
+});
+
 export {
   getEquipment,
   createEquipment,
   getSingleEquipment,
-  updateEquipment
+  updateEquipment,
+  deleteEquipment
 };
