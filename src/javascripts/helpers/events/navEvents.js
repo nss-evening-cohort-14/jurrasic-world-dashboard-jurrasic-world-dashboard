@@ -8,10 +8,13 @@ import { getDinos } from '../data/dinoData';
 import { showStaff, emptyStaff } from '../../components/cards/staff';
 import { getStaff } from '../data/staffData';
 import loadPage from '../../components/loadPage';
+import getLoadCards from '../data/loadData';
 
 const navigationEvents = () => {
   document.querySelector('#home').addEventListener('click', () => {
-    loadPage();
+    getLoadCards().then((cardArray) => {
+      loadPage(cardArray);
+    });
   });
 
   document.querySelector('#dinosaurs').addEventListener('click', () => {

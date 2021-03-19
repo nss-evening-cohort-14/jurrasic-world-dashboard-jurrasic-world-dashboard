@@ -1,8 +1,13 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import domEvents from '../helpers/events/domEvents';
+import navigationEvents from '../helpers/events/navEvents';
 
 const signMeOut = () => {
+  document.querySelector('body').removeEventListener('click', domEvents);
+  document.querySelector('body').removeEventListener('click', navigationEvents);
   firebase.auth().signOut();
+  window.location.reload();
 };
 
 const logoutButton = () => {

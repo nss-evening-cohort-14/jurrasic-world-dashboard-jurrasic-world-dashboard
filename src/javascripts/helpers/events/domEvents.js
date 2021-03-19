@@ -2,28 +2,79 @@ import addVendorForm from '../../components/forms/vendorForms';
 import { addVendor, getSingleVendor, updateVendor } from '../data/vendorData';
 import showVendors from '../../components/vendor';
 import updateVendorForm from '../../components/forms/updateVendorForm';
-import { showRides } from '../../components/cards/rides';
+import { emptyRides, showRides } from '../../components/cards/rides';
 import addRideForm from '../../components/forms/addRideForm';
-import { createRides, updateRides, getSingleRide } from '../data/ridesData';
+import {
+  createRides, updateRides, getSingleRide, getRides
+} from '../data/ridesData';
 import editRideForm from '../../components/forms/editRideForm';
 import addStaffForm from '../../components/forms/addStaffForm';
-import { createStaff, getSingleStaffMember, updateStaff } from '../data/staffData';
-import { showStaff } from '../../components/cards/staff';
+import {
+  createStaff, getSingleStaffMember, getStaff, updateStaff
+} from '../data/staffData';
+import { emptyStaff, showStaff } from '../../components/cards/staff';
 import updateStaffForm from '../../components/forms/updateStaffForm';
 import {
-  createDino, deleteDino, getSingleDino, updateDino
+  createDino, deleteDino, getDinos, getSingleDino, updateDino
 } from '../data/dinoData';
-import { showDinos } from '../../components/cards/dinos';
+import { emptyDinos, showDinos } from '../../components/cards/dinos';
 import addDinoForm from '../../components/forms/addDinoForm';
 import updateDinoForm from '../../components/forms/updateDinoForm';
-import { showEquipment } from '../../components/cards/equipment';
+import { emptyEquipment, showEquipment } from '../../components/cards/equipment';
 import addEquipmentForm from '../../components/forms/addEquipmentFrom';
-import { createEquipment, getSingleEquipment, updateEquipment } from '../data/equipmentData';
+import {
+  createEquipment, getEquipment, getSingleEquipment, updateEquipment
+} from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
+    // LOAD PAGE CARDS
+    if (e.target.id.includes('-MW5Wenvcp9YhgEaOz79')) {
+      getDinos().then((dinosArray) => {
+        if (dinosArray.length) {
+          showDinos(dinosArray);
+        } else {
+          emptyDinos();
+        }
+      });
+    }
+
+    if (e.target.id.includes('-MW5Wenwp-atMNNLMqlW')) {
+      getStaff().then((staffArray) => {
+        if (staffArray.length) {
+          showStaff(staffArray);
+        } else {
+          emptyStaff();
+        }
+      });
+    }
+
+    if (e.target.id.includes('-MW5Wenwp-atMNNLMqlX')) {
+      showVendors();
+    }
+
+    if (e.target.id.includes('-MW5WenxyDSu15c-pi8R')) {
+      getEquipment().then((equipmentArray) => {
+        if (equipmentArray.length) {
+          showEquipment(equipmentArray);
+        } else {
+          emptyEquipment();
+        }
+      });
+    }
+
+    if (e.target.id.includes('-MW5WenyoBtn7HWyRVKc')) {
+      getRides().then((ridesArray) => {
+        if (ridesArray.length) {
+          showRides(ridesArray);
+        } else {
+          emptyRides();
+        }
+      });
+    }
+
     // DINOSAURS
     if (e.target.id.includes('add-dino-btn')) {
       formModal('Add a Dino');
@@ -37,7 +88,7 @@ const domEvents = () => {
         diet: document.querySelector('#diet').value,
         height: document.querySelector('#height').value,
         weight: document.querySelector('#weight').value,
-        species: document.querySelector('#species').value
+        species: document.querySelector('#species').value,
       };
       createDino(dinoObject).then((dinoArray) => showDinos(dinoArray));
       $('#formModal').modal('toggle');
@@ -57,7 +108,7 @@ const domEvents = () => {
         diet: document.querySelector('#diet').value,
         height: document.querySelector('#height').value,
         weight: document.querySelector('#weight').value,
-        species: document.querySelector('#species').value
+        species: document.querySelector('#species').value,
       };
 
       updateDino(firebaseKey, dinoObject).then((dinosArray) => showDinos(dinosArray));
@@ -84,7 +135,7 @@ const domEvents = () => {
         broken: false,
         title: document.querySelector('#title').value,
         description: document.querySelector('#description').value,
-        image: document.querySelector('#image').value
+        image: document.querySelector('#image').value,
       };
       createEquipment(equipmentObject).then((equipmentArray) => showEquipment(equipmentArray));
       $('#formModal').modal('toggle');
@@ -102,7 +153,7 @@ const domEvents = () => {
       const equipmentObject = {
         title: document.querySelector('#title').value,
         description: document.querySelector('#description').value,
-        image: document.querySelector('#image').value
+        image: document.querySelector('#image').value,
       };
 
       updateEquipment(firebaseKey, equipmentObject).then((equipmentArray) => showEquipment(equipmentArray));
@@ -120,7 +171,7 @@ const domEvents = () => {
         broken: false,
         name: document.querySelector('#ride-name').value,
         image: document.querySelector('#ride-image').value,
-        description: document.querySelector('#ride-description').value
+        description: document.querySelector('#ride-description').value,
       };
       document.querySelector('form').reset();
       createRides(rideObj).then((ridesArray) => showRides(ridesArray));
@@ -139,7 +190,7 @@ const domEvents = () => {
       const rideObj = {
         name: document.querySelector('#ride-name').value,
         image: document.querySelector('#ride-image').value,
-        description: document.querySelector('#ride-description').value
+        description: document.querySelector('#ride-description').value,
       };
       updateRides(rideObj, firebaseKey).then((ridesArray) => showRides(ridesArray));
       $('#formModal').modal('toggle');
@@ -158,7 +209,7 @@ const domEvents = () => {
         image: document.querySelector('#image').value,
         name: document.querySelector('#name').value,
         position: document.querySelector('#position').value,
-        kidnapped: false
+        kidnapped: false,
       };
       createStaff(staffObject).then((staffArray) => showStaff(staffArray));
       document.querySelector('form').reset();
@@ -178,7 +229,7 @@ const domEvents = () => {
         description: document.querySelector('#description').value,
         image: document.querySelector('#image').value,
         name: document.querySelector('#name').value,
-        position: document.querySelector('#position').value
+        position: document.querySelector('#position').value,
       };
 
       updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));
@@ -199,7 +250,7 @@ const domEvents = () => {
         name: document.querySelector('#vendor-name').value,
         description: document.querySelector('#vendor-description').value,
         products: document.querySelector('#vendor-products').value,
-        imageUrl: document.querySelector('#vendor-image-url').value
+        imageUrl: document.querySelector('#vendor-image-url').value,
       };
       if (vendorObj.name && vendorObj.description) {
         addVendor(vendorObj).then(() => {
@@ -221,7 +272,7 @@ const domEvents = () => {
         name: document.querySelector('#vendor-name').value,
         description: document.querySelector('#vendor-description').value,
         products: document.querySelector('#vendor-products').value,
-        imageUrl: document.querySelector('#vendor-image-url').value
+        imageUrl: document.querySelector('#vendor-image-url').value,
       };
       if (vendorObj.name && vendorObj.description) {
         updateVendor(firebaseKey, vendorObj).then(() => {
