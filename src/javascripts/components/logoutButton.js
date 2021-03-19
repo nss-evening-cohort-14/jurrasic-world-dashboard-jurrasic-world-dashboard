@@ -4,7 +4,6 @@ import domEvents from '../helpers/events/domEvents';
 import navigationEvents from '../helpers/events/navEvents';
 
 const signMeOut = () => {
-  debugger;
   document.querySelector('body').removeEventListener('click', domEvents);
   document.querySelector('body').removeEventListener('click', navigationEvents);
   firebase.auth().signOut();
