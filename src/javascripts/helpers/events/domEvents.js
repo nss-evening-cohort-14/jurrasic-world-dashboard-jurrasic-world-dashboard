@@ -184,7 +184,6 @@ const domEventsListener = (e) => {
   if (e.target.id.includes('delete-vendor')) {
     e.preventDefault();
     const firebaseKey = e.target.id.split('--')[1];
-    console.warn(firebaseKey);
     deleteVendor(firebaseKey).then((vendorArr) => showVendors(vendorArr));
   }
   if (e.target.id.includes('submit-add-vendor')) {
