@@ -8,7 +8,7 @@ import updateVendorForm from '../../components/forms/updateVendorForm';
 import { emptyRides, showRides } from '../../components/cards/rides';
 import addRideForm from '../../components/forms/addRideForm';
 import {
-  createRides, updateRides, getSingleRide, deleteRide
+  createRides, updateRides, getSingleRide, deleteRide, getRides
 } from '../data/ridesData';
 import editRideForm from '../../components/forms/editRideForm';
 import addStaffForm from '../../components/forms/addStaffForm';
@@ -130,16 +130,16 @@ const domEventsListener = (e) => {
     addEquipmentForm();
   }
 
-    if (e.target.id.includes('delete-ride')) {
-      const firebasekey = e.target.id.split('--')[1];
-      deleteRide(firebasekey).then((ridesArray) => showRides(ridesArray));
-    }
+  if (e.target.id.includes('delete-ride')) {
+    const firebasekey = e.target.id.split('--')[1];
+    deleteRide(firebasekey).then((ridesArray) => showRides(ridesArray));
+  }
 
-    // STAFF
-    if (e.target.id.includes('add-staff-btn')) {
-      formModal('Add Staff Member');
-      addStaffForm();
-    }
+  // STAFF
+  if (e.target.id.includes('add-staff-btn')) {
+    formModal('Add Staff Member');
+    addStaffForm();
+  }
   if (e.target.id.includes('submit-equipment')) {
     e.preventDefault();
     const equipmentObject = {
@@ -265,7 +265,6 @@ const domEventsListener = (e) => {
   if (e.target.id.includes('delete-vendor')) {
     e.preventDefault();
     const firebaseKey = e.target.id.split('--')[1];
-    console.warn(firebaseKey);
     deleteVendor(firebaseKey).then((vendorArr) => showVendors(vendorArr));
   }
   if (e.target.id.includes('submit-add-vendor')) {
