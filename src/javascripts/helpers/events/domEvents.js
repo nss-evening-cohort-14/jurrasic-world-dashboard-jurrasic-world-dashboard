@@ -10,7 +10,10 @@ import addRideForm from '../../components/forms/addRideForm';
 import { createRides, updateRides, getSingleRide } from '../data/ridesData';
 import editRideForm from '../../components/forms/editRideForm';
 import addStaffForm from '../../components/forms/addStaffForm';
-import { createStaff, getSingleStaffMember, updateStaff } from '../data/staffData';
+import {
+  createStaff, getSingleStaffMember, updateStaff,
+  deleteStaff
+} from '../data/staffData';
 import { showStaff } from '../../components/cards/staff';
 import updateStaffForm from '../../components/forms/updateStaffForm';
 import { createDino, getSingleDino, updateDino } from '../data/dinoData';
@@ -19,7 +22,9 @@ import addDinoForm from '../../components/forms/addDinoForm';
 import updateDinoForm from '../../components/forms/updateDinoForm';
 import { showEquipment } from '../../components/cards/equipment';
 import addEquipmentForm from '../../components/forms/addEquipmentFrom';
-import { createEquipment, getSingleEquipment, updateEquipment } from '../data/equipmentData';
+import {
+  createEquipment, getSingleEquipment, updateEquipment, deleteEquipment
+} from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
 
@@ -99,6 +104,11 @@ const domEventsListener = (e) => {
     updateEquipment(firebaseKey, equipmentObject).then((equipmentArray) => showEquipment(equipmentArray));
     $('#formModal').modal('toggle');
   }
+
+  if (e.target.id.includes('delete-equipment')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    deleteEquipment(firebaseKey).then((equipmentArray) => showEquipment(equipmentArray));
+  }
   // RIDES
   if (e.target.id.includes('add-ride-btn')) {
     formModal('Add a Ride');
@@ -174,6 +184,11 @@ const domEventsListener = (e) => {
 
     updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));
     $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('staff-delete-btn')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    deleteStaff(firebaseKey).then((staffArray) => showStaff(staffArray));
   }
   // VENDORS
   if (e.target.id === 'new-vendor-btn') {

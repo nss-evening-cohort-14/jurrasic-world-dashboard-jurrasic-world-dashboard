@@ -1,6 +1,6 @@
 const addStaffForm = () => {
   document.querySelector('#modal-body').innerHTML = `
-  <form class="mt-1" style="width: 40%; margin: 0 auto;">
+  <form class="mt-1">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Name">
