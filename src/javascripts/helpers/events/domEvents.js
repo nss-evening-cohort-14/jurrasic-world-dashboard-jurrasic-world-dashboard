@@ -31,6 +31,7 @@ import {
 } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
+import { stopChaos } from '../data/chaosData';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -40,6 +41,7 @@ const domEventsListener = (e) => {
         showDinos(dinosArray);
       } else {
         emptyDinos();
+        stopChaos();
       }
     });
   }
