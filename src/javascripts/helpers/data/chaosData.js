@@ -2,8 +2,8 @@ import chaosToast from '../../components/toasts/toast';
 
 // toastHandler.js
 
-const initializeToast = () => {
-  chaosToast('Something is broken');
+const initializeToast = (message) => {
+  chaosToast(message);
   $('#chaosToast').toast({
     delay: 15000
   });

@@ -53,6 +53,8 @@ const domEventsListener = (e) => {
         emptyStaff();
       }
     });
+    initializeToast('Your Jurassic World experience may be temporarily impacted. A staff member has gone missing.');
+    toastTimer();
   }
 
   if (e.target.id.includes('-MW5Wenwp-atMNNLMqlX')) {
@@ -67,6 +69,8 @@ const domEventsListener = (e) => {
         emptyEquipment();
       }
     });
+    initializeToast('Your Jurassic World experience may be temporarily impacted. We are currently experiencing technical difficulties with our equipment.');
+    toastTimer();
   }
 
   if (e.target.id.includes('-MW5WenyoBtn7HWyRVKc')) {
@@ -77,7 +81,7 @@ const domEventsListener = (e) => {
         emptyRides();
       }
     });
-    initializeToast();
+    initializeToast('Your Jurassic World experience may be temporarily impacted. We are currently experiencing technical difficulties with a ride.');
     toastTimer();
   }
   // DINOSAURS
