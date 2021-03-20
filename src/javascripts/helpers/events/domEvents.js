@@ -31,7 +31,6 @@ import {
 } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
-import { initializeToast, toastTimer } from '../data/chaosData';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -53,8 +52,6 @@ const domEventsListener = (e) => {
         emptyStaff();
       }
     });
-    initializeToast('Your Jurassic World experience may be temporarily impacted. A staff member has gone missing.');
-    toastTimer();
   }
 
   if (e.target.id.includes('-MW5Wenwp-atMNNLMqlX')) {
@@ -69,8 +66,6 @@ const domEventsListener = (e) => {
         emptyEquipment();
       }
     });
-    initializeToast('Your Jurassic World experience may be temporarily impacted. We are currently experiencing technical difficulties with our equipment.');
-    toastTimer();
   }
 
   if (e.target.id.includes('-MW5WenyoBtn7HWyRVKc')) {
@@ -81,8 +76,6 @@ const domEventsListener = (e) => {
         emptyRides();
       }
     });
-    initializeToast('Your Jurassic World experience may be temporarily impacted. We are currently experiencing technical difficulties with a ride.');
-    toastTimer();
   }
   // DINOSAURS
   if (e.target.id.includes('add-dino-btn')) {
