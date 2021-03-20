@@ -31,6 +31,7 @@ import {
 } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
+import { initializeToast, toastTimer } from '../data/chaosData';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -76,6 +77,8 @@ const domEventsListener = (e) => {
         emptyRides();
       }
     });
+    initializeToast();
+    toastTimer();
   }
   // DINOSAURS
   if (e.target.id.includes('add-dino-btn')) {
