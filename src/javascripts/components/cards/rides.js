@@ -4,7 +4,7 @@ import 'firebase/auth';
 const showRides = (arr) => {
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#title-container').innerHTML = '<h1>Rides</h1>';
-  document.querySelector('#add-button').innerHTML = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal" id="add-ride-btn">Add a Ride</button>';
+  document.querySelector('#add-button').innerHTML = '<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#formModal" id="add-ride-btn">Add a Ride</button>';
   document.querySelector('#form-container').innerHTML = '';
   if (firebase.auth().currentUser) {
     arr.forEach((item) => {

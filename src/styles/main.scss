@@ -1,11 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+$bg-img: url('../assets/junglePic.jpeg');
 
 body {
-  background-color: antiquewhite;
-  color: brown;
   text-align: center;
   margin-top: 100px;
+  background: $bg-img no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: cafeteria, sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
 
 #card-container {
@@ -18,6 +26,7 @@ body {
 
 .card {
   margin: 1em;
+  border: 2px solid black;
 }
 
 #view-card-style {
@@ -26,4 +35,14 @@ body {
 
 #view-card-style:hover {
   transform: scale(1.1);
+}
+
+h1 {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 64px;
+}
+
+a h5 {
+  text-decoration: none;
+  color: black;
 }
