@@ -20,10 +20,14 @@ body {
   margin: 1em;
 }
 
-#view-card-style {
+.view-card-style {
   transition: transform 300ms, box-shadow 300ms;
 }
 
-#view-card-style:hover {
+.view-card-style:hover {
   transform: scale(1.1);
+}
+
+div.pointer {
+  cursor: pointer;
 }
