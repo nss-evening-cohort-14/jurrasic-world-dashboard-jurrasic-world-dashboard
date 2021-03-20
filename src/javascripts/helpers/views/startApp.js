@@ -4,6 +4,7 @@ import navigationEvents from '../events/navEvents';
 import loadPage from '../../components/loadPage';
 import getLoadCards from '../data/loadData';
 import { domEvents } from '../events/domEvents';
+import flyingMonkey from '../../components/flyingMonkey';
 
 const startApp = () => {
   domBuilder();
@@ -13,6 +14,7 @@ const startApp = () => {
   getLoadCards().then((cardArray) => {
     loadPage(cardArray);
   });
+  flyingMonkey();
 };
 
 export default startApp;
