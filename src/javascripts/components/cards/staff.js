@@ -3,7 +3,7 @@ import 'firebase/auth';
 
 const showStaff = (array) => {
   document.querySelector('#title-container').innerHTML = '<h1>Staff</h1>';
-  document.querySelector('#add-button').innerHTML = '<button type="button" data-toggle="modal" data-target="#formModal" id="add-staff-btn" class="btn btn-danger my-2">Add a Staff Member</button>';
+  document.querySelector('#add-button').innerHTML = '<button type="button" data-toggle="modal" data-target="#formModal" id="add-staff-btn" class="btn btn-success btn-lg my-2">Add a Staff Member</button>';
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#card-container').innerHTML = '';
 
