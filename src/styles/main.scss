@@ -20,6 +20,11 @@ body {
   margin: 1em;
 }
 
+.card-img-top {
+  height: 100%;
+  width: auto;
+}
+
 .view-card-style {
   transition: transform 300ms, box-shadow 300ms;
 }
