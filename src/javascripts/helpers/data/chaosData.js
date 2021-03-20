@@ -46,7 +46,7 @@ const stopChaos = (timer) => {
 const runChaos = () => {
   // initializeToast();
   const timer = showRandomMessage();
-  document.querySelector('#dinosaurs').addEventListener('click', () => {
+  document.querySelector('#card-container').addEventListener('click', () => {
     console.warn('clicked stop chaos');
     stopChaos(timer);
   });
