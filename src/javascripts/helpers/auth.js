@@ -8,15 +8,10 @@ import logoutButton from '../components/logoutButton';
 const checkLoginStatus = () => {
   firebase.initializeApp(firebaseConfig);
   firebase.auth().onAuthStateChanged((user) => {
+    startApp();
     if (user) {
-      // person is logged in do something...
-      startApp();
       logoutButton();
-    } else {
-      // person is NOT logged in
-      startApp();
-      loginButton();
-    }
+    } else loginButton();
   });
 };
 
