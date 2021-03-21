@@ -72,6 +72,12 @@ div.pointer {
   cursor: pointer; 
 }
 
+#toast-container {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+}
+
 .chaos-button .card {
   background-color: #d4948f;
 }
