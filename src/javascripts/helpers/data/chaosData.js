@@ -1,4 +1,6 @@
 // chaosData.jsa
+import { ebenezerButton } from '../../components/buttons/ebenezerButton';
+import { stopFlyingMonkey } from '../../components/flyingMonkey';
 import chaosToast from '../../components/toasts/chaosToast';
 /*
 const initializeToast = () => {
@@ -34,23 +36,18 @@ const chooseTarget = () => {
 
 const showRandomMessage = () => {
   const startTimer = setInterval(chooseTarget, 10000);
-  // setInterval(chooseTarget, 7000);
-  // clearInterval(chaosInterval);
   return startTimer;
 };
 
-const stopChaos = (timer) => {
-  clearInterval(timer);
-};
-
 const runChaos = () => {
-  // initializeToast();
   const timer = showRandomMessage();
-  document.querySelector('#card-container').addEventListener('click', () => {
-    console.warn('clicked stop chaos');
-    stopChaos(timer);
+  document.querySelector('#chaos-button-container').addEventListener('click', (e) => {
+    if (e.target.id.includes('monkey-loose')) {
+      clearInterval(timer);
+      stopFlyingMonkey();
+      ebenezerButton();
+    }
   });
-  // setTimeOut(showRandomMessage, 10000);
 };
 
-export { runChaos, stopChaos };
+export default runChaos;

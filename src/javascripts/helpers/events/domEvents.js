@@ -31,7 +31,9 @@ import {
 } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
-import { stopChaos } from '../data/chaosData';
+import runChaos from '../data/chaosData';
+import { flyingMonkey } from '../../components/flyingMonkey';
+import { ebenezerLooseButton } from '../../components/buttons/ebenezerButton';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -41,7 +43,6 @@ const domEventsListener = (e) => {
         showDinos(dinosArray);
       } else {
         emptyDinos();
-        stopChaos();
       }
     });
   }
@@ -306,6 +307,11 @@ const domEventsListener = (e) => {
       });
     }
     $('#formModal').modal('toggle');
+  }
+  if (e.target.id.includes('ebenezer')) {
+    runChaos();
+    flyingMonkey();
+    setTimeout(ebenezerLooseButton(), 5000);
   }
 };
 
