@@ -13,24 +13,14 @@ const showToast = () => {
   $('#chaosToast').toast('show');
 };
 
-const randomView = () => Math.floor((Math.random() * 3));
-
 const chooseTarget = () => {
-  let toastMessage = '';
-  switch (randomView()) {
-    case 0:
-      toastMessage = 'Broken Ride';
-      break;
-    case 1:
-      toastMessage = 'Broken Equipment';
-      break;
-    case 2:
-      toastMessage = 'Kidnapped Staff';
-      break;
-    default:
-      break;
-  }
-  chaosToast(toastMessage);
+  const messageArr = [
+    'Your Jurassic World experience may be temporarily impacted. A staff member has gone missing.',
+    'Your Jurassic World experience may be temporarily impacted. We are currently experiencing technical difficulties with our equipment.',
+    'Your Jurassic World experience may be temporarily impacted. We are currently experiencing technical difficulties with a ride.'
+  ];
+  const message = messageArr[Math.floor(Math.random() * messageArr.length)];
+  chaosToast(message);
   showToast();
 };
 
