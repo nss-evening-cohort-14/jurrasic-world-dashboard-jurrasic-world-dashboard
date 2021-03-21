@@ -2,13 +2,7 @@
 import { ebenezerButton } from '../../components/buttons/ebenezerButton';
 import { stopFlyingMonkey } from '../../components/flyingMonkey';
 import chaosToast from '../../components/toasts/chaosToast';
-/*
-const initializeToast = () => {
-  $('#chaosToast').toast({
-    delay: 25000
-  });
-};
-*/
+
 const showToast = () => {
   $('#chaosToast').toast('show');
 };
