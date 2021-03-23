@@ -29,4 +29,4 @@ This app is a great source of entertainment for children or Jurassic World fans!
 - John Maple: https://github.com/Greenfin17
 - Lindsey Satterfield: https://github.com/lindseysatterfield
 - Tad Sekeres: https://github.com/tsekeres
-- Gabrielle Tobermann: 
+- Gabrielle Tobermann: https://github.com/Gabrielle-Tobermann
