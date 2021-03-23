@@ -9,10 +9,10 @@ const showEquipment = (arr) => {
   if (firebase.auth().currentUser) {
     arr.forEach((item) => {
       document.querySelector('#card-container').innerHTML += `
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem; height: 28em">
         <img src="${item.image}" class="card-img-top" alt="${item.title}">
-        <div class="card-body">
-          <h5 class="card-title">${item.title}</h5>
+        <div class="card-body d-flex flex-column">
+          <h3 class="card-title">${item.title}</h3>
           <p class="card-text">${item.description}.</p>
           <div class="mt-auto">
               <a href="#" id="update-equipment-btn--${item.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
