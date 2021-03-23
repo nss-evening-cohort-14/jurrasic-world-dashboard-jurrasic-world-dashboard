@@ -8,7 +8,7 @@ const loadPage = (array) => {
     document.querySelector('#card-container').innerHTML += `<div class="card view-card-style" style="width: 10rem;">
       <a href="#" id="card-top--${item.firebaseKey}"><img class="card-top-img pt-2" src=${item.image} id="${item.firebaseKey}" alt="View Card" style="width: 70px; height: auto"></a>
       <div class="card-body pointer" id="card-body--${item.firebaseKey}">
-        <a href="#"><h5 id="${item.firebaseKey}" class="title">${item.title}</h5></a>
+        <a href="#"><h3 id="${item.firebaseKey}" class="card-title">${item.title}</h3></a>
       </div>
     </div>`;
   });
