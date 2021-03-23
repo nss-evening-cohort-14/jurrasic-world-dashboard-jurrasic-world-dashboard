@@ -10,10 +10,10 @@ const vendorCard = (vendor) => {
     </div>`;
   }
   const vendorStr = `
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="${vendor.imageUrl}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${vendor.name}</h5>
+  <div class="card" style="width: 18rem; height: 34em">
+    <img class="card-img-top" style="height: 13em" src="${vendor.imageUrl}" alt="Card image cap">
+    <div class="card-body d-flex flex-column">
+      <h3 class="card-title">${vendor.name}</h3>
       <p class="card-text">${vendor.products}</p>
       <p class="card-text">${vendor.description}</p>
     ${buttonStr}
