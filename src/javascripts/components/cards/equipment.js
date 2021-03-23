@@ -9,7 +9,7 @@ const showEquipment = (arr) => {
   if (firebase.auth().currentUser) {
     arr.forEach((item) => {
       document.querySelector('#card-container').innerHTML += `
-      <div class="card" style="width: 18rem; height: 25em">
+      <div class="card" style="width: 18rem; height: 31em">
         <img src="${item.image}" class="card-img-top" alt="${item.title}">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title">${item.title}</h3>
