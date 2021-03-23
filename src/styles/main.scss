@@ -95,7 +95,6 @@ div.pointer {
 }
 
 .monkey > * {
-/* Adjust animation duration to change the element’s speed */
   animation: fly 50s linear infinite;
   pointer-events: none !important;
 	top: 0;
@@ -105,11 +104,6 @@ div.pointer {
 	animation-delay: 1s;
 	z-index: 999999;
 }
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
 
 @keyframes fly {
 

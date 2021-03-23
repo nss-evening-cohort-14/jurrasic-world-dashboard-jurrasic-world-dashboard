@@ -19,7 +19,7 @@ const chooseTarget = () => {
 };
 
 const showRandomMessage = () => {
-  const startTimer = setInterval(chooseTarget, 10000);
+  const startTimer = setInterval(chooseTarget, 15000);
   return startTimer;
 };
 
