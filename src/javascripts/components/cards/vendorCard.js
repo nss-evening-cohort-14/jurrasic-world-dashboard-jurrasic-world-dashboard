@@ -10,7 +10,7 @@ const vendorCard = (vendor) => {
     </div>`;
   }
   const vendorStr = `
-  <div class="card" style="width: 18rem; height: 33em">
+  <div class="card" style="width: 18rem; height: 39em">
     <img class="card-img-top" src="${vendor.imageUrl}" alt="Card image cap">
     <div class="card-body d-flex flex-column">
       <h3 class="card-title">${vendor.name}</h3>
