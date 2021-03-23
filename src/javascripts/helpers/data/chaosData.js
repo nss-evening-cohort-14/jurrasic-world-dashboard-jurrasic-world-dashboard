@@ -1,4 +1,4 @@
-// chaosData.jsa
+// chaosData.js
 import { ebenezerButton } from '../../components/buttons/ebenezerButton';
 import { stopFlyingMonkey } from '../../components/flyingMonkey';
 import chaosToast from '../../components/toasts/chaosToast';
