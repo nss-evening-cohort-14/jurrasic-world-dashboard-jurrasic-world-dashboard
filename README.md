@@ -1,4 +1,5 @@
-# Jurassic World Dashboard
+# Jurassic World Dashboard 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e09f24a1-a7ac-4baa-a693-5bbd56286b01/deploy-status)](https://app.netlify.com/sites/jurassic-world-dashboard/deploys)
 ## Netlify Link
 jurassic-world-dashboard.netlify.app
 ## Overview 
