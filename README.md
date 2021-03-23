@@ -1,6 +1,6 @@
 # Jurassic World Dashboard [![Netlify Status](https://api.netlify.com/api/v1/badges/e09f24a1-a7ac-4baa-a693-5bbd56286b01/deploy-status)](https://app.netlify.com/sites/jurassic-world-dashboard/deploys)
 ## Netlify Link
-[jurassic-world-dashboard.netlify.app](jurassic-world-dashboard.netlify.app)
+[jurassic-world-dashboard.netlify.app](https://jurassic-world-dashboard.netlify.app)
 ## Overview 
 This is a dashboard to maintain the greatest biological experiment which doubles as the greatest theme park, Jurassic World. Logged in users are able to create, update and delete park staff, vendors, equipment, rides and dinosaurs. The park monkey, Ebenezer, creates chaos around the park when released. 
 ## Description of User 
