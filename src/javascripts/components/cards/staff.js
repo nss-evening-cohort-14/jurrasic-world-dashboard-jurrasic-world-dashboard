@@ -12,8 +12,8 @@ const showStaff = (array) => {
       document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem; height: 33em">
       <img class="card-img-top" style="height: 13em" src="${staff.image}" alt="Image of ${staff.name}">
       <div class="card-body d-flex flex-column">
-        <h4 class="card-title">${staff.name}</h4>
-        <h5>${staff.position}</h5>
+        <h3 class="card-title">${staff.name}</h3>
+        <h5 class="card-title">${staff.position}</h5>
         <p class="card-text">${staff.description}</p>
         <div class="mt-auto">
           <a href="#" id="staff-update-btn--${staff.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
