@@ -9,9 +9,9 @@ const showDinos = (array) => {
 
   if (firebase.auth().currentUser) {
     array.forEach((dino) => {
-      document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=${dino.image} alt=${dino.species}>
-        <div class="card-body">
+      document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem; height: 28em">
+        <img class="card-img-top" style="height: 13em" src=${dino.image} alt=${dino.species}>
+        <div class="card-body d-flex flex-column">
           <h3 class="card-title">${dino.species}</h3>
           <h6 class="card-text">Height: ${dino.height}</h6>
           <h6 class="card-text">Weight: ${dino.weight}</h6>
