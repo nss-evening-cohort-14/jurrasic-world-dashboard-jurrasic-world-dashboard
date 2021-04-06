@@ -7,7 +7,7 @@ const updateVendorForm = (vendorObj) => {
           placeholder="Enter Vendor Name" value="${vendorObj.name}" required>
       </div>
       <div class="form-group">
-        <label for="vendor-description">Vendor Desciption</label>
+        <label for="vendor-description">Vendor Description</label>
         <input type="text" class="form-control" id="vendor-description" 
           placeholder="Vendor Description" value="${vendorObj.description}" required>
       </div>

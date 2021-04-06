@@ -7,7 +7,7 @@ const addVendorForm = () => {
           placeholder="Enter Vendor Name" value="" required>
       </div>
       <div class="form-group">
-        <label for="vendor-description">Vendor Desciption</label>
+        <label for="vendor-description">Vendor Description</label>
         <input type="text" class="form-control" id="vendor-description" 
           placeholder="Vendor Description" value="" required>
       </div>
