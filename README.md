@@ -1,77 +1,41 @@
-# Jurassic World Visitor Dashboard
+# Jurassic World Dashboard [![Netlify Status](https://api.netlify.com/api/v1/badges/e09f24a1-a7ac-4baa-a693-5bbd56286b01/deploy-status)](https://app.netlify.com/sites/jurassic-world-dashboard/deploys)
+## Netlify Link
+[jurassic-world-dashboard.netlify.app](https://jurassic-world-dashboard.netlify.app)
+## Overview 
+This is a dashboard to maintain the greatest biological experiment which doubles as the greatest theme park, Jurassic World. Logged in users are able to create, update and delete park staff, vendors, equipment, rides and dinosaurs. The park monkey, Ebenezer, creates chaos around the park when released. 
+## Description of User 
+This app is a great source of entertainment for children or Jurassic World fans!
+## Features 
+- Dinosaur view
+- Staff view
+- Equipment view 
+- Vendor view 
+- Ride view 
 
-### Product Owner
-Your PO is assigned as an approver and feedback for your application. They are not there to guide you through code. If you have code related needs, submit a completed issue ticket.
+- User authentication 
+- Ability to create, update or delete data from each view (only for logged in users).
+- Modal form to create and update data.
+- A button to let the monkey loose. 
+- When the monkey is loose, a toast pops up with a randomized message. 
+- When the same button is clicked, the monkey goes back to its cage and the toast disappears. 
+- Home page with clickable cards which will redirect user to desired view. 
+- Navigation bar with buttons to each view and a logo which will redirect user to home page.
 
-PO: **Dr. T**
+## Loom 
+https://www.loom.com/share/5e4bfea74ddd43b59b4eaf2c4a91d7b3
 
-### Description
+## Helpful Links
+- Figma: https://www.figma.com/file/031olQyE3BwuD0WJtrGIIS/Jurassic-World-Visitor
+- Project Board: https://github.com/nss-evening-cohort-14/jurrasic-world-dashboard-jurrasic-world-dashboard/projects/1
+- User flow chart: ![flow-chart](https://user-images.githubusercontent.com/76187279/112084938-a2856980-8b57-11eb-9b64-b77e00d96c76.png)
+- ERD: https://dbdiagram.io/d/604e67b4fcdcb6230b241915
+## Screenshots
+![landingpage](https://user-images.githubusercontent.com/23327097/112085211-1a539400-8b58-11eb-84cd-20bbfd41e8b1.png)
+![toast](https://user-images.githubusercontent.com/23327097/112085225-1f184800-8b58-11eb-9531-308af9b500da.png)
+![staff](https://user-images.githubusercontent.com/23327097/112085247-29d2dd00-8b58-11eb-8d3b-de550e5e9e4c.png)
 
-You are tasked with creating a dashboard to maintain the greatest biological experiment that doubles as the greatest theme park, Jurassic World!  You will need to keep track of the dinosaurs, the staff, the rides, the vendors, and the equipment needed to run a successful biological experiment... I mean, theme park.  To provide a more immersive and suspenseful experience, the creators of the park have introduced the Chaos Monkey that you are tasked with keeping track of.  The Chaos Monkey gets loose at the same time every day and usually wreaks havoc around the park.  
-
-### Requirements
-* Complete Planning
-    * Make sure to break down tickets into milestones, include an ERD and a Workflow Diagram of how you will tackle each part of the application
-    * NOTE: This includes setting up a development branch that branches off of the main branch to test your team's code and for review by the PO
-* Set up deployment EARLY and deploy with every milestone so that the PO can see the web interface
-* Add Webpack to the Project
-- Authentication for (CUD), Read-only without authentication
-* Dinosaurs module
-* Staff module
-* Rides module
-* Vendors module
-* Equipment module
-* Show a toast on the page when the Chaos Monkey strikes
-
-### User Stories
-
-#### Authentication
-
-- As a user, I should be able to log in to add, edit, or delete from any of the modules.
-- As a user, if I'm not authenticated, I can only read the information.
-- As a user, I should be able to login using Google
-- As a user, I should be able to logout
-
-#### Dinosaurs
-
-- As a user, I should be able to add new dinosaurs
-- As a user, I should be able to delete dinosaurs
-- As a user, I should be able to edit the dinosaurs
-- As a user, I should be able to view all the dinosaurs
-
-#### Staff 
-
-- As a user, I should be able to add new staff
-- As a user, I should be able to delete staff
-- As a user, I should be able to edit the staff
-- As a user, I should be able to view all the staff
-
-#### Rides
-
-- As a user, I should be able to add new rides
-- As a user, I should be able to delete rides
-- As a user, I should be able to edit the rides
-- As a user, I should be able to view all the rides
-
-#### Vendors
-
-- As a user, I should be able to add new vendors
-- As a user, I should be able to delete vendors
-- As a user, I should be able to edit the vendors
-- As a user, I should be able to view all the vendors
-
-#### Equipment
-
-- As a user, I should be able to add new equipment
-- As a user, I should be able to delete equipment
-- As a user, I should be able to edit the equipment
-- As a user, I should be able to view all the equipment
-
-#### Chaos Monkey
-
-- As a user, I should be shown a toast whenever the Chaos Monkey strikes
-- As a user, I should allow the Chaos Monkey to do one random act for a set interval
-- As a user, the Chaos Monkey should have a chance to break down a random ride
-- As a user, the Chaos Monkey should have a chance to kidnap a random staff member
-- As a user, the Chaos Monkey should have a chance to break a random piece of equipment 
-
+## Contributors 
+- John Maple: https://github.com/Greenfin17
+- Lindsey Satterfield: https://github.com/lindseysatterfield
+- Tad Sekeres: https://github.com/tsekeres
+- Gabrielle Tobermann: https://github.com/Gabrielle-Tobermann

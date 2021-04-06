@@ -1,0 +1,37 @@
+{
+  "-MVx6aY4h-DPZhfeEqhC": {
+    "title": "Roller Coaster",
+    "description": "Medium Roller Coaster",
+    "firebaseKey": "-MVx6aY4h-DPZhfeEqhC",
+    "image": "https://media.wired.com/photos/59327532aef9a462de982ee4/191:100/w_1280,c_limit/4.jpeg",
+    "broken": false
+  }, 
+  "-MVx6vaBAdMOca8jd-1f": {
+    "title": "Big Roller Coaster",
+    "description": "For adults only",
+    "firebaseKey":  "-MVx6vaBAdMOca8jd-1f",
+    "image": "https://bestonamusementequipment.com/wp-content/uploads/2015/11/what-is-the-4-ring-large-roller-coaster-in-Beston.jpg",
+    "broken": false
+  }, 
+  "-MVx7JjLdAOtUyJWzHbP": {
+    "title": "Spinner",
+    "description": "Fastest ride in the park",
+    "firebaseKey":  "-MVx7JjLdAOtUyJWzHbP",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Chair-O-Planes%2C_night.jpg",
+    "broken": false
+  },
+  "-MVx7iAITgj_UL7f2t8a": {
+    "title": "Big Wheel",
+    "description": "Slowest ride in the park",
+    "firebaseKey":  "-MVx7iAITgj_UL7f2t8a",
+    "image": "https://jaylaxmifiber.com.np/wp-content/uploads/2020/02/giant-ferris-wheel1.jpg",
+    "broken": false
+  }, 
+  "-MVx8G9EKBSHtLZsnvLq": {
+    "title": "Night Time Wheel",
+    "description": "Available during the summer",
+    "firebaseKey": "-MVx8G9EKBSHtLZsnvLq",
+    "image": "https://www.huismanmanufacturing.com/hubfs/Montreal_DJI_0101.jpg",
+    "broken": false
+  }
+}
