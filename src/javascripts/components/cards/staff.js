@@ -19,6 +19,14 @@ const showStaff = (array) => {
           <a href="#" id="staff-update-btn--${staff.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
           <a href="#" id="staff-delete-btn--${staff.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
         </div>
+        <div class="form-group" id="assign-activity">
+          <label for="cars">Assign to a Role:</label>
+          <select name="assignment" id="assignment">
+            <option value="volvo">Ride</option>
+            <option value="saab">Vendor</option>
+            <option value="mercedes">Dino</option>
+          </select>
+        </div>
       </div>
     </div>`;
     });
