@@ -20,11 +20,11 @@ const showStaff = (array) => {
           <a href="#" id="staff-delete-btn--${staff.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
         </div>
         <div class="form-group" id="assign-activity">
-          <label for="cars">Assign to a Role:</label>
+          <label for="roles">Assign to a Role:</label>
           <select name="assignment" id="assignment">
-            <option value="volvo">Ride</option>
-            <option value="saab">Vendor</option>
-            <option value="mercedes">Dino</option>
+            <option value="ride">Ride</option>
+            <option value="vendor">Vendor</option>
+            <option value="dino">Dino</option>
           </select>
         </div>
       </div>
