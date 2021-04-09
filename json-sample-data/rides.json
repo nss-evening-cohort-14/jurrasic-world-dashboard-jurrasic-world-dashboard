@@ -4,34 +4,39 @@
     "description" : "Scariest Ride",
     "firebaseKey": "-MVskI4uOqAH1cbTtcy7",
     "image" : "https://s7d2.scene7.com/is/image/TWCNews/0928_universal_jurassic_velocicoaster_concept_art",
-    "name" : "Dino Roller Coaster"
+    "name" : "Dino Roller Coaster",
+    "staff_member" : "Fred"
   },
   "-MVsl6VmBAx7r0hqqont" : {
-    "broken" : false,
+    "broken" : true,
     "description" : "Roll through a dino field",
     "firebaseKey" : "-MVsl6VmBAx7r0hqqont",
     "image": "https://media.comicbook.com/2018/11/jurassic-world-gyrosphere-header-1142400-1280x0.jpeg",
-    "name" : "Rolling ball"
+    "name" : "Rolling ball",
+    "staff_member" : "Jim"
   },
   "-MVsmflS6sDVb98wpKk7" : {
     "broken" : false,
     "description" : "Dive in with the dinos!",
     "firebaseKey" : "-MVsmflS6sDVb98wpKk7",
     "image" : "https://bloximages.newyork1.vip.townnews.com/heraldmailmedia.com/content/tncms/assets/v3/editorial/8/33/833e5d48-c5ed-5cc7-b47c-cbfbf8a6f028/5c953c0a32eb7.image.jpg?resize=400%2C335",
-    "name" : "Dino River"
+    "name" : "Dino River",
+    "staff_member" : "Peter"
   },
   "-MVsn8bhcAZBqtAcBlVa" : {
     "broken" : false,
     "description" : "Scary Dino Forest",
     "firebaseKey" : "-MVsn8bhcAZBqtAcBlVa",
     "image" : "https://cdn.vox-cdn.com/thumbor/QPSpwOh2ZtDQsXu0V78atbYKCXE=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19545811/dinosaur_00.jpg",
-    "name" : "Dino Forest"
+    "name" : "Dino Forest",
+    "staff_member" : "Sean"
   },
   "-MVstaWzd5xPTh1vJdWh" : {
-    "broken" : false,
+    "broken" : true,
     "description" : "Biggest dino of the park",
     "firebaseKey": "-MVstaWzd5xPTh1vJdWh",
     "image" : "https://media1.popsugar-assets.com/files/thumbor/9hTIcjg8GCA-VA5dfB291-nmhrk/0x75:2400x2475/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/07/12/832/n/24155406/2e0186d25d28d88d017679.57757222_/i/New-Jurassic-World-Ride-Universal-Studios-Hollywood-Details.jpg",
-    "name" : "Under Water Dino"
+    "name" : "Under Water Dino",
+    "staff_member" : "Rob"
   }
 }
