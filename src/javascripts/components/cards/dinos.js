@@ -1,6 +1,5 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import equipmentStaffList from './equipmentStaff';
 
 const showDinos = (array) => {
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" data-toggle="modal" data-target="#formModal" id="add-dino-btn">Add Dino</button>';
@@ -24,7 +23,6 @@ const showDinos = (array) => {
         </div>
       </div>`;
     });
-    equipmentStaffList();
   } else {
     document.querySelector('#add-button').innerHTML = '';
     array.forEach((dino) => {
