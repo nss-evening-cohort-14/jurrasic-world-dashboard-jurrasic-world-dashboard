@@ -114,6 +114,9 @@ You are tasked with creating a dashboard to maintain the greatest biological exp
 ### Description
 After the first group of developers mysteriously disappeared in a freak accident (conveniently right before the checks cleared), you'll need to pick up where they left off.  The higher-ups really like the dashboard the last team built, but also want to keep track of the staff, and want to know the schedule of each staff.  They should be able to assign a staff member to a dinosaur, or a vendor, as well as the ability to assign equipment to a staff member.  The Chaos Monkey doesn't really appreciate all the micro-management, and has developed more heinous ways to cause trouble.  The higher-ups are starting to understand the impact that introducing a Chaos Monkey has on the park, and has tasked you with creating a system that will alert the park manager when and where the Chaos Monkey strikes.  
 
+## Links
+ERD: https://dbdiagram.io/d/606d107eecb54e10c33f0295
+Deployed App: https://development--e14-jurassicworld2.netlify.app/
 ### Requirements
 
 - Chaos Monkey Requirements: 
