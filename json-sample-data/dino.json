@@ -5,9 +5,7 @@
   "species":"TYRANNOSAURUS REX",
   "height":"20 Ft.",
   "weight":"9 Tons",
-  "diet":"Carnivore",
-  "staff_member1":"Ellie",
-  "staff_member2":"Rob"
+  "diet":"Carnivore"
 },
 "-MVsudZl9DQrwugh5QhB":{
   "firebaseKey": "-MVsudZl9DQrwugh5QhB",
@@ -15,9 +13,7 @@
   "species":"TRICERATOPS",
   "height":"9.8 Ft.",
   "weight":"12 Tons",
-  "diet":"Herbivore",
-  "staff_member1":"Casey",
-  "staff_member2":"Sean"
+  "diet":"Herbivore"
 },
 "-MVsudZnXZ8LYvwusWVM":{
   "firebaseKey": "-MVsudZnXZ8LYvwusWVM",
@@ -25,9 +21,7 @@
   "species":"PACHYCEPHALOSAURUS",
   "height":"17.5 Ft.",
   "weight":".5 Tons",
-  "diet":"Herbivore",
-  "staff_member1":"Holly",
-  "staff_member2":"Sara"
+  "diet":"Herbivore"
 },
 "-MVsudZohJEqNRVB5j8c":{
   "firebaseKey": "-MVsudZohJEqNRVB5j8c",
@@ -35,9 +29,7 @@
   "species":"INDOMINUS REX",
   "height":"40 Ft.",
   "weight":"Unknown",
-  "diet":"Carnivore",
-  "staff_member1":"Chie",
-  "staff_member2":"Jim"
+  "diet":"Carnivore"
 },
 "-MVsudZqlPkLok5F3KoG":{
   "firebaseKey": "-MVsudZqlPkLok5F3KoG",
@@ -45,9 +37,7 @@
   "species":"CARNOTAURUS",
   "height":"9.5 Ft.",
   "weight":"2.1 Tons",
-  "diet":"Carnivore",
-  "staff_member1":"Ben",
-  "staff_member2":"Martin"
+  "diet":"Carnivore"
 },
 "-MVsudZrukofZgO9ywAo":{
   "firebaseKey": "-MVsudZrukofZgO9ywAo",
@@ -55,9 +45,7 @@
   "species":"MOSASAURUS",
   "height":"9.8 Ft.",
   "weight":"28 Tons",
-  "diet":"Carnivore",
-  "staff_member1":"Dr. T",
-  "staff_member2":"Aja"
+  "diet":"Carnivore"
 },
 "-MVsudZt7_Kd2BOmEc6i":{
   "firebaseKey": "-MVsudZt7_Kd2BOmEc6i",
@@ -65,9 +53,7 @@
   "species":"ANKYLOSAURUS",
   "height":"5.6 Ft.",
   "weight":"6.5 Tons",
-  "diet":"Herbivore",
-  "staff_member1":"Trinity",
-  "staff_member2":"Lindsey"
+  "diet":"Herbivore"
 },
 "-MVsudZuilOf50e1zY8X":{
   "firebaseKey": "-MVsudZuilOf50e1zY8X",
@@ -75,9 +61,7 @@
   "species":"DIMORPHODON",
   "height":"3.3 Ft.",
   "weight":"4 Lbs.",
-  "diet":"Carnivore",
-  "staff_member1":"Dani",
-  "staff_member2":"John"
+  "diet":"Carnivore"
 },
 "-MVsudZvDHCzQmKkBjqc":{
   "firebaseKey": "-MVsudZvDHCzQmKkBjqc",
@@ -85,9 +69,7 @@
   "species":"VELOCIRAPTOR",
   "height":"5.5 Ft.",
   "weight":"500 Lbs.",
-  "diet":"Carnivore",
-  "staff_member1":"Juan",
-  "staff_member2":"Matthew"
+  "diet":"Carnivore"
 },
 "-MVsudZx880SFZe6voAa":{
   "firebaseKey": "-MVsudZx880SFZe6voAa",
@@ -95,8 +77,6 @@
   "species":"APATOSAURUS",
   "height":"15 Ft.",
   "weight":"36 Tons",
-  "diet":"Herbivore",
-  "staff_member1":"Nathan",
-  "staff_member2":"Tad"
+  "diet":"Herbivore"
 }
 }
