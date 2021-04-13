@@ -35,6 +35,7 @@ import runChaos from '../data/chaosData';
 import { flyingMonkey } from '../../components/flyingMonkey';
 import { ebenezerLooseButton } from '../../components/buttons/ebenezerButton';
 import staffMemberModal from '../../components/forms/staffMemberModal';
+import staffMemberRole from '../../components/forms/staffMemberRole';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -315,11 +316,16 @@ const domEventsListener = (e) => {
     setTimeout(ebenezerLooseButton(), 5000);
   }
   if (e.target.id.includes('assign-staff-members-btn')) {
-    formModal();
+    formModal('Assign a Staff Member');
     staffMemberModal();
   }
   if (e.target.id.includes('assigned-staff-submit')) {
-    $('#formModal').modal('toggle');
+    // $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('assigned-staff-next')) {
+    const roleValue = document.querySelector('#chosen-role').value;
+    staffMemberRole(roleValue);
   }
 };
 

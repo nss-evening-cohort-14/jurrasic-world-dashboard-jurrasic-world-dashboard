@@ -7,7 +7,6 @@ const staffMemberSelect = () => {
     <select name="staff-member" id="staff-member-options">
   `;
   getStaff().then((staffArr) => {
-    console.warn(staffArr);
     staffArr.forEach((staff) => {
       domString += `
           <option value="${staff.firebaseKey}">${staff.name}</option>

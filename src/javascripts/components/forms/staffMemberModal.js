@@ -8,16 +8,16 @@ const staffMemberModal = () => {
       <div class="form-group m-2" id="assigned-role">
         <label for="roles">Choose an Activity</label>
         <select name="chosen-role" id="chosen-role">
-          <option value="1">Sample Role</option>
+          <option value="dino">Dino Handler</option>
+          <option value="ride">Ride Operator</option>
+          <option value="vendor">Vendor Associate</option>
         </select>
       </div>
       <div class="form-group m-2" id="specific-activity">
-        <label for="roles">Choose an x  </label>
-        <select name="chosen-role" id="chosen-role">
-          <option value="1">Sample Role</option>
-        </select>
       </div>
-      <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>
+      <div id="staff-form-buttons">
+        <button type="button" class="btn btn-success" id="assigned-staff-next">Next</button>
+      </div>
   `;
   staffMemberSelect();
 };
