@@ -34,6 +34,7 @@ import formModal from '../../components/forms/formModal';
 import runChaos from '../data/chaosData';
 import { flyingMonkey } from '../../components/flyingMonkey';
 import { ebenezerLooseButton } from '../../components/buttons/ebenezerButton';
+import assignEquipmentForm from '../../components/forms/assignEquipmentForm';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -131,6 +132,13 @@ const domEventsListener = (e) => {
   if (e.target.id.includes('add-equipment-btn')) {
     formModal('Add Equipment');
     addEquipmentForm();
+  }
+
+  if (e.target.id.includes('assign-equipment')) {
+    e.preventDefault();
+    formModal('Assign Equipment');
+    assignEquipmentForm();
+    $('#formModal').modal('toggle');
   }
 
   if (e.target.id.includes('delete-ride')) {
