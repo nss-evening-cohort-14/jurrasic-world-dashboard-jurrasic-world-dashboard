@@ -34,6 +34,7 @@ import formModal from '../../components/forms/formModal';
 import runChaos from '../data/chaosData';
 import { flyingMonkey } from '../../components/flyingMonkey';
 import { ebenezerLooseButton } from '../../components/buttons/ebenezerButton';
+import staffMemberModal from '../../components/forms/staffMemberModal';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -312,6 +313,13 @@ const domEventsListener = (e) => {
     runChaos();
     flyingMonkey();
     setTimeout(ebenezerLooseButton(), 5000);
+  }
+  if (e.target.id.includes('assign-staff-members-btn')) {
+    formModal();
+    staffMemberModal();
+  }
+  if (e.target.id.includes('assigned-staff-submit')) {
+    $('#formModal').modal('toggle');
   }
 };
 
