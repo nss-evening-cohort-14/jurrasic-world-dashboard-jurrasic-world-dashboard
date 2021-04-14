@@ -4,10 +4,6 @@ import { getVendors } from '../../helpers/data/vendorData';
 
 const staffMemberRole = (role) => {
   document.querySelector('#specific-activity').innerHTML = '';
-  // let domString = `
-  //   <label for="roles">Choose a Target</label>
-  //   <select name="staff-target" id="staff-target-options">
-  // `;
   if (role === 'dino') {
     let domString = ` 
     <label for="roles">Choose a Dino</label>
