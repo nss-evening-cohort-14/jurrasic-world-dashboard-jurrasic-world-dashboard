@@ -10,23 +10,17 @@ const showStaff = (array) => {
 
   if (firebase.auth().currentUser) {
     array.forEach((staff) => {
-      document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem; height: 33em">
-      <img class="card-img-top" style="height: 13em" src="${staff.image}" alt="Image of ${staff.name}">
+      document.querySelector('#card-container').innerHTML += `<div class="card" style="width: 18rem; height: 35rem">
+      <img class="card-img-top" style="height: 13rem" src="${staff.image}" alt="Image of ${staff.name}">
       <div class="card-body d-flex flex-column">
         <h3 class="card-title">${staff.name}</h3>
         <h5 class="card-title">${staff.position}</h5>
         <p class="card-text">${staff.description}</p>
+        <h6>Assignment</h6>
+          <p class="card-text">${staff.position}: ${staff.position}</p>
         <div class="mt-auto">
           <a href="#" id="staff-update-btn--${staff.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
           <a href="#" id="staff-delete-btn--${staff.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
-        </div>
-        <div class="form-group" id="assign-activity">
-          <label for="roles">Assign to a Role:</label>
-          <select name="assignment" id="assignment">
-            <option value="ride">Ride</option>
-            <option value="vendor">Vendor</option>
-            <option value="dino">Dino</option>
-          </select>
         </div>
       </div>
     </div>`;

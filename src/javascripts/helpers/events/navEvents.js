@@ -10,8 +10,9 @@ import { getStaff } from '../data/staffData';
 import loadPage from '../../components/loadPage';
 import getLoadCards from '../data/loadData';
 import { getVendors } from '../data/vendorData';
+import showAssignments, { showDinoAssignments, showRideAssignments, showVendorAssignments } from '../../components/cards/assignments';
 
-const navigationEvents = () => {
+const navigationEvents = (rideArray, dinoArray, vendorArray) => {
   document.querySelector('#home').addEventListener('click', () => {
     getLoadCards().then((cardArray) => {
       loadPage(cardArray);
@@ -65,6 +66,14 @@ const navigationEvents = () => {
         emptyRides();
       }
     });
+  });
+
+  document.querySelector('#assignments').addEventListener('click', (e) => {
+    e.preventDefault();
+    showAssignments();
+    showRideAssignments(rideArray);
+    showDinoAssignments(dinoArray);
+    showVendorAssignments(vendorArray);
   });
 };
 
