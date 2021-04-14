@@ -175,7 +175,7 @@ const domEventsListener = (e) => {
   if (e.target.id.includes('submit-equipment')) {
     e.preventDefault();
     const equipmentObject = {
-      broken: false,
+      broken: document.querySelector('#broken-button').checked,
       title: document.querySelector('#title').value,
       description: document.querySelector('#description').value,
       image: document.querySelector('#image').value
@@ -194,6 +194,7 @@ const domEventsListener = (e) => {
     const firebaseKey = e.target.id.split('--')[1];
     e.preventDefault();
     const equipmentObject = {
+      broken: document.querySelector('#broken-button').checked,
       title: document.querySelector('#title').value,
       description: document.querySelector('#description').value,
       image: document.querySelector('#image').value

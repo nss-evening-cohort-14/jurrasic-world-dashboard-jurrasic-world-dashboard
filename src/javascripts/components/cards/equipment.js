@@ -31,6 +31,7 @@ const showEquipment = (arr) => {
         <div class="card-body">
           <h5 class="card-title">${item.title}</h5>
           <p class="card-text">${item.description}.</p>
+          <p class="card-text">Broken: ${item.broken}.</p>
         </div>
       </div>`;
     });
