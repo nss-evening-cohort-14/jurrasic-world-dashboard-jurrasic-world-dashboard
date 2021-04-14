@@ -13,6 +13,10 @@ const addEquipmentForm = () => {
         <label for="title">Description</label>
         <input type="text" class="form-control" id="description" aria-describedby="description" placeholder="Enter Equipment Description" required>
       </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="broken-button">
+        <label class="form-check-label" for="broken-button">Broken?</label>
+      </div>
       <button type="submit" id="submit-equipment" class="btn btn-primary">Submit Equipment</button>
     </form>`;
 };
