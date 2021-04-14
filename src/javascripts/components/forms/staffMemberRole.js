@@ -25,6 +25,17 @@ const staffMemberRole = (role) => {
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
       <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
+      document.querySelector('body').addEventListener('click', (e) => {
+        if (e.target.id.includes('assigned-staff-submit')) {
+          const dinoFirebaseKey = document.querySelector('#staff-target-options').value;
+          const staffFirebaseKey = document.querySelector('#staff-member-options').value;
+          const firebaseObj = {
+            staff_firebaseKey: staffFirebaseKey,
+            dino_firebaseKey: dinoFirebaseKey
+          };
+          console.warn(firebaseObj);
+        }
+      });
     });
   } else if (role === 'vendor') {
     let domString = ` 
@@ -43,6 +54,17 @@ const staffMemberRole = (role) => {
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
       <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
+      document.querySelector('body').addEventListener('click', (e) => {
+        if (e.target.id.includes('assigned-staff-submit')) {
+          const vendorFirebaseKey = document.querySelector('#staff-target-options').value;
+          const staffFirebaseKey = document.querySelector('#staff-member-options').value;
+          const firebaseObj = {
+            staff_firebaseKey: staffFirebaseKey,
+            vendor_firebaseKey: vendorFirebaseKey
+          };
+          console.warn(firebaseObj);
+        }
+      });
     });
   } else if (role === 'ride') {
     let domString = ` 
@@ -61,6 +83,17 @@ const staffMemberRole = (role) => {
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
       <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
+      document.querySelector('body').addEventListener('click', (e) => {
+        if (e.target.id.includes('assigned-staff-submit')) {
+          const rideFirebaseKey = document.querySelector('#staff-target-options').value;
+          const staffFirebaseKey = document.querySelector('#staff-member-options').value;
+          const firebaseObj = {
+            staff_firebaseKey: staffFirebaseKey,
+            ride_firebaseKey: rideFirebaseKey
+          };
+          console.warn(firebaseObj);
+        }
+      });
     });
   }
 };
