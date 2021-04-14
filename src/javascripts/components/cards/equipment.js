@@ -3,7 +3,7 @@ import 'firebase/auth';
 
 const showEquipment = (arr) => {
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" data-toggle="modal" data-target="#formModal" id="add-equipment-btn">Add Equipment</button>';
-  document.querySelector('#form-container').innerHTML = '';
+  document.querySelector('#form-container').innerHTML = '<button type="button" class="btn btn-light" id="check-equipment">Check Equipment</button>';
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#title-container').innerHTML = '<h1>Equipment</h1>';
   if (firebase.auth().currentUser) {
@@ -17,14 +17,7 @@ const showEquipment = (arr) => {
           <div class="mt-auto">
               <a href="#" id="update-equipment-btn--${item.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
               <a href="#" id="delete-equipment--${item.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
-              <div class="form-group" id="assign-equipment">
-              <label for="roles">Assign to a Staff Member:</label>
-              <select name="assignment" id="equipment-staff">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
+              <a href="#" id="assign-equipment--${item.firebaseKey}" class="btn btn-secondary mx-2">Assign</a>
           </div>
         </div>
       </div>`;
@@ -38,6 +31,7 @@ const showEquipment = (arr) => {
         <div class="card-body">
           <h5 class="card-title">${item.title}</h5>
           <p class="card-text">${item.description}.</p>
+          <p class="card-text">Broken: ${item.broken}.</p>
         </div>
       </div>`;
     });

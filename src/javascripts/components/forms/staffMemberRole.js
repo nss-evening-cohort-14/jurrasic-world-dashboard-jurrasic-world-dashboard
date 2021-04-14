@@ -4,10 +4,6 @@ import { getVendors } from '../../helpers/data/vendorData';
 
 const staffMemberRole = (role) => {
   document.querySelector('#specific-activity').innerHTML = '';
-  // let domString = `
-  //   <label for="roles">Choose a Target</label>
-  //   <select name="staff-target" id="staff-target-options">
-  // `;
   if (role === 'dino') {
     let domString = ` 
     <label for="roles">Choose a Dino</label>
@@ -24,18 +20,7 @@ const staffMemberRole = (role) => {
       document.querySelector('#specific-activity').innerHTML = domString;
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
-      <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
-      document.querySelector('body').addEventListener('click', (e) => {
-        if (e.target.id.includes('assigned-staff-submit')) {
-          const dinoFirebaseKey = document.querySelector('#staff-target-options').value;
-          const staffFirebaseKey = document.querySelector('#staff-member-options').value;
-          const firebaseObj = {
-            staff_firebaseKey: staffFirebaseKey,
-            dino_firebaseKey: dinoFirebaseKey
-          };
-          console.warn(firebaseObj);
-        }
-      });
+      <button type="button" class="btn btn-success" id="assigned-staff-dino-submit">Assign</button>`;
     });
   } else if (role === 'vendor') {
     let domString = ` 
@@ -53,18 +38,7 @@ const staffMemberRole = (role) => {
       document.querySelector('#specific-activity').innerHTML = domString;
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
-      <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
-      document.querySelector('body').addEventListener('click', (e) => {
-        if (e.target.id.includes('assigned-staff-submit')) {
-          const vendorFirebaseKey = document.querySelector('#staff-target-options').value;
-          const staffFirebaseKey = document.querySelector('#staff-member-options').value;
-          const firebaseObj = {
-            staff_firebaseKey: staffFirebaseKey,
-            vendor_firebaseKey: vendorFirebaseKey
-          };
-          console.warn(firebaseObj);
-        }
-      });
+      <button type="button" class="btn btn-success" id="assigned-staff-vendor-submit">Assign</button>`;
     });
   } else if (role === 'ride') {
     let domString = ` 
@@ -82,18 +56,7 @@ const staffMemberRole = (role) => {
       document.querySelector('#specific-activity').innerHTML = domString;
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
-      <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
-      document.querySelector('body').addEventListener('click', (e) => {
-        if (e.target.id.includes('assigned-staff-submit')) {
-          const rideFirebaseKey = document.querySelector('#staff-target-options').value;
-          const staffFirebaseKey = document.querySelector('#staff-member-options').value;
-          const firebaseObj = {
-            staff_firebaseKey: staffFirebaseKey,
-            ride_firebaseKey: rideFirebaseKey
-          };
-          console.warn(firebaseObj);
-        }
-      });
+      <button type="button" class="btn btn-success" id="assigned-staff-ride-submit">Assign</button>`;
     });
   }
 };
