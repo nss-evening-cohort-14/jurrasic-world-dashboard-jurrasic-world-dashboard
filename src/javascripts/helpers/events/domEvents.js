@@ -40,6 +40,7 @@ import { assignStaffDino } from '../data/dinoStaffData';
 import { assignStaffVendor } from '../data/vendorStaffData';
 import { assignStaffRide } from '../data/rideStaffData';
 import assignEquipmentForm from '../../components/forms/assignEquipmentForm';
+import checkEquipment from '../../components/buttons/equipmentButton';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -155,6 +156,10 @@ const domEventsListener = (e) => {
     };
     assignEquipmentStaff(equipmentStaffObject);
     $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('check-equipment')) {
+    checkEquipment();
   }
 
   if (e.target.id.includes('delete-ride')) {

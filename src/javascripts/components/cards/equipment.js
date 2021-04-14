@@ -3,7 +3,7 @@ import 'firebase/auth';
 
 const showEquipment = (arr) => {
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" data-toggle="modal" data-target="#formModal" id="add-equipment-btn">Add Equipment</button>';
-  document.querySelector('#form-container').innerHTML = '';
+  document.querySelector('#form-container').innerHTML = '<button type="button" class="btn btn-light" id="check-equipment">Check Equipment</button>';
   document.querySelector('#card-container').innerHTML = '';
   document.querySelector('#title-container').innerHTML = '<h1>Equipment</h1>';
   if (firebase.auth().currentUser) {
