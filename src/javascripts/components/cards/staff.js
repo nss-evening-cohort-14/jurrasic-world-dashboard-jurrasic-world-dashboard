@@ -3,7 +3,8 @@ import 'firebase/auth';
 
 const showStaff = (array) => {
   document.querySelector('#title-container').innerHTML = '<h1>Staff</h1>';
-  document.querySelector('#add-button').innerHTML = '<button type="button" data-toggle="modal" data-target="#formModal" id="add-staff-btn" class="btn btn-success btn-lg my-2">Add a Staff Member</button>';
+  document.querySelector('#add-button').innerHTML = `<button type="button" data-toggle="modal" data-target="#formModal" id="add-staff-btn" class="btn btn-success btn-lg my-2">Add a Staff Member</button>
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#formModal" id="assign-staff-members-btn">Assign a Staff Member</button>`;
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#card-container').innerHTML = '';
 
@@ -18,14 +19,6 @@ const showStaff = (array) => {
         <div class="mt-auto">
           <a href="#" id="staff-update-btn--${staff.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
           <a href="#" id="staff-delete-btn--${staff.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
-        </div>
-        <div class="form-group" id="assign-activity">
-          <label for="roles">Assign to a Role:</label>
-          <select name="assignment" id="assignment">
-            <option value="ride">Ride</option>
-            <option value="vendor">Vendor</option>
-            <option value="dino">Dino</option>
-          </select>
         </div>
       </div>
     </div>`;
