@@ -17,7 +17,7 @@ const showEquipment = (arr) => {
           <div class="mt-auto">
               <a href="#" id="update-equipment-btn--${item.firebaseKey}" class="btn btn-primary mx-2" data-toggle="modal" data-target="#formModal">Edit</a>
               <a href="#" id="delete-equipment--${item.firebaseKey}" class="btn btn-danger mx-2">Delete</a>
-              <a href="#" id="assign-equipment" class="btn btn-secondary mx-2">Assign</a>
+              <a href="#" id="assign-equipment--${item.firebaseKey}" class="btn btn-secondary mx-2">Assign</a>
           </div>
         </div>
       </div>`;

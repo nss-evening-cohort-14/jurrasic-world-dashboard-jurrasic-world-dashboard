@@ -1,6 +1,6 @@
 import { getStaff } from '../../helpers/data/staffData';
 
-const assignEquipmentForm = (array = []) => {
+const assignEquipmentForm = (equipmentFirebaseKey) => {
   document.querySelector('#modal-body').innerHTML = '';
   let domString = `<form class="mt-1">
   <div class="form-group" id="assign-equipment">
@@ -11,14 +11,14 @@ const assignEquipmentForm = (array = []) => {
 
   getStaff().then((staffArray) => {
     staffArray.forEach((staff) => {
-      if (array.includes(staff.firebaseKey)) {
-        domString += `<option selected value="${staff.firebaseKey}">${staff.name}</option>`;
+      if (staffArray.includes(staff.firebaseKey)) {
+        domString += `<option selected id="selected-staff" value="${staff.firebaseKey}">${staff.name}</option>`;
       } else {
-        domString += `<option value="${staff.firebaseKey}">${staff.name}</option>`;
+        domString += `<option id="selected-staff" value="${staff.firebaseKey}">${staff.name}</option>`;
       }
     });
 
-    domString += '</select> </div> <button type="submit" id="submit-assignment" class="btn btn-primary">Assign Staff</button></form>';
+    domString += `</select> </div> <button type="submit" id="submit-assignment--${equipmentFirebaseKey}" class="btn btn-primary">Assign Staff</button></form>`;
 
     document.querySelector('#modal-body').innerHTML = domString;
   });

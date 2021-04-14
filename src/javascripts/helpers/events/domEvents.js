@@ -27,7 +27,7 @@ import updateDinoForm from '../../components/forms/updateDinoForm';
 import { emptyEquipment, showEquipment } from '../../components/cards/equipment';
 import addEquipmentForm from '../../components/forms/addEquipmentFrom';
 import {
-  createEquipment, getSingleEquipment, updateEquipment, deleteEquipment, getEquipment
+  createEquipment, getSingleEquipment, updateEquipment, deleteEquipment, getEquipment, assignEquipmentStaff
 } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
@@ -135,9 +135,22 @@ const domEventsListener = (e) => {
   }
 
   if (e.target.id.includes('assign-equipment')) {
-    e.preventDefault();
+    const firebaseKey = e.target.id.split('--')[1];
+    console.warn(firebaseKey);
     formModal('Assign Equipment');
-    assignEquipmentForm();
+    assignEquipmentForm(firebaseKey);
+    $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('submit-assignment')) {
+    e.preventDefault();
+    const firebaseKey = e.target.id.split('--')[1];
+    const equipmentStaffObject = {
+      equipment_firebaseKey: firebaseKey,
+      staff_firebaseKey: document.querySelector('#selected-staff').value,
+    };
+    console.warn(equipmentStaffObject);
+    assignEquipmentStaff(equipmentStaffObject);
     $('#formModal').modal('toggle');
   }
 
