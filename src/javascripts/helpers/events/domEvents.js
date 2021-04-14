@@ -35,6 +35,7 @@ import runChaos from '../data/chaosData';
 import { flyingMonkey } from '../../components/flyingMonkey';
 import { ebenezerLooseButton } from '../../components/buttons/ebenezerButton';
 import assignEquipmentForm from '../../components/forms/assignEquipmentForm';
+import checkEquipment from '../../components/buttons/equipmentButton';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -136,7 +137,6 @@ const domEventsListener = (e) => {
 
   if (e.target.id.includes('assign-equipment')) {
     const firebaseKey = e.target.id.split('--')[1];
-    console.warn(firebaseKey);
     formModal('Assign Equipment');
     assignEquipmentForm(firebaseKey);
     $('#formModal').modal('toggle');
@@ -149,9 +149,12 @@ const domEventsListener = (e) => {
       equipment_firebaseKey: firebaseKey,
       staff_firebaseKey: document.querySelector('#selected-staff').value,
     };
-    console.warn(equipmentStaffObject);
     assignEquipmentStaff(equipmentStaffObject);
     $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('check-equipment')) {
+    checkEquipment();
   }
 
   if (e.target.id.includes('delete-ride')) {
