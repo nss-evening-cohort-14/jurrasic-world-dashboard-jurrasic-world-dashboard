@@ -24,7 +24,7 @@ const staffMemberRole = (role) => {
       document.querySelector('#specific-activity').innerHTML = domString;
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
-      <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
+      <button type="button" class="btn btn-success" id="assigned-staff-dino-submit">Assign</button>`;
     });
   } else if (role === 'vendor') {
     let domString = ` 
@@ -42,7 +42,7 @@ const staffMemberRole = (role) => {
       document.querySelector('#specific-activity').innerHTML = domString;
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
-      <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
+      <button type="button" class="btn btn-success" id="assigned-staff-vendor-submit">Assign</button>`;
     });
   } else if (role === 'ride') {
     let domString = ` 
@@ -60,7 +60,7 @@ const staffMemberRole = (role) => {
       document.querySelector('#specific-activity').innerHTML = domString;
       document.querySelector('#staff-form-buttons').innerHTML = `
       <button type="button" class="btn btn-success" id="assigned-staff-next">Reset Activity</button>
-      <button type="button" class="btn btn-success" id="assigned-staff-submit">Assign</button>`;
+      <button type="button" class="btn btn-success" id="assigned-staff-ride-submit">Assign</button>`;
     });
   }
 };
