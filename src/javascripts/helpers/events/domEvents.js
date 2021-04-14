@@ -27,7 +27,7 @@ import updateDinoForm from '../../components/forms/updateDinoForm';
 import { emptyEquipment, showEquipment } from '../../components/cards/equipment';
 import addEquipmentForm from '../../components/forms/addEquipmentFrom';
 import {
-  createEquipment, getSingleEquipment, updateEquipment, deleteEquipment, getEquipment
+  createEquipment, getSingleEquipment, updateEquipment, deleteEquipment, getEquipment, assignEquipmentStaff
 } from '../data/equipmentData';
 import updateEquipmentForm from '../../components/forms/updateEquipmentForm';
 import formModal from '../../components/forms/formModal';
@@ -39,6 +39,7 @@ import staffMemberRole from '../../components/forms/staffMemberRole';
 import { assignStaffDino } from '../data/dinoStaffData';
 import { assignStaffVendor } from '../data/vendorStaffData';
 import { assignStaffRide } from '../data/rideStaffData';
+import assignEquipmentForm from '../../components/forms/assignEquipmentForm';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -136,6 +137,24 @@ const domEventsListener = (e) => {
   if (e.target.id.includes('add-equipment-btn')) {
     formModal('Add Equipment');
     addEquipmentForm();
+  }
+
+  if (e.target.id.includes('assign-equipment')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    formModal('Assign Equipment');
+    assignEquipmentForm(firebaseKey);
+    $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('submit-assignment')) {
+    e.preventDefault();
+    const firebaseKey = e.target.id.split('--')[1];
+    const equipmentStaffObject = {
+      equipment_firebaseKey: firebaseKey,
+      staff_firebaseKey: document.querySelector('#selected-staff').value,
+    };
+    assignEquipmentStaff(equipmentStaffObject);
+    $('#formModal').modal('toggle');
   }
 
   if (e.target.id.includes('delete-ride')) {
@@ -330,7 +349,7 @@ const domEventsListener = (e) => {
       staff_firebaseKey: staffFirebaseKey,
       dino_firebaseKey: dinoFirebaseKey
     };
-    assignStaffDino(staffDinoObj).then((dinoStaffArray) => console.warn(dinoStaffArray));
+    assignStaffDino(staffDinoObj);
     $('#formModal').modal('toggle');
   }
   if (e.target.id.includes('assigned-staff-vendor-submit')) {
@@ -341,7 +360,7 @@ const domEventsListener = (e) => {
       staff_firebaseKey: staffFirebaseKey,
       vendor_firebaseKey: vendorFirebaseKey
     };
-    assignStaffVendor(staffVendorObj).then((vendorStaffArray) => console.warn(vendorStaffArray));
+    assignStaffVendor(staffVendorObj);
     $('#formModal').modal('toggle');
   }
   if (e.target.id.includes('assigned-staff-ride-submit')) {
@@ -352,7 +371,7 @@ const domEventsListener = (e) => {
       staff_firebaseKey: staffFirebaseKey,
       ride_firebaseKey: rideFirebaseKey
     };
-    assignStaffRide(staffRideObj).then((rideStaffArray) => console.warn(rideStaffArray));
+    assignStaffRide(staffRideObj);
     $('#formModal').modal('toggle');
   }
 

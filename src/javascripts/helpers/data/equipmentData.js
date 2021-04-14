@@ -25,6 +25,16 @@ const createEquipment = (equipmentObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const assignEquipmentStaff = (equipmentStaffObject) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/equipment_staff.json`, equipmentStaffObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/equipment_staff/${response.data.name}.json`, body)
+        .then((patch) => resolve(patch))
+        .catch((error) => reject(error));
+    });
+});
+
 const getSingleEquipment = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/equipment/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
@@ -48,5 +58,6 @@ export {
   createEquipment,
   getSingleEquipment,
   updateEquipment,
-  deleteEquipment
+  deleteEquipment,
+  assignEquipmentStaff
 };
