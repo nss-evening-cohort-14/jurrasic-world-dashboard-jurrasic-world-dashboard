@@ -41,6 +41,7 @@ import { assignStaffVendor } from '../data/vendorStaffData';
 import { assignStaffRide } from '../data/rideStaffData';
 import assignEquipmentForm from '../../components/forms/assignEquipmentForm';
 import checkEquipment from '../../components/buttons/equipmentButton';
+import { getAssignments, getAssignmentStaff } from '../data/assignmentData';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -384,6 +385,10 @@ const domEventsListener = (e) => {
   if (e.target.id.includes('assigned-staff-next')) {
     const roleValue = document.querySelector('#chosen-role').value;
     staffMemberRole(roleValue);
+  }
+
+  if (e.target.id.includes('view-staff-assignments')) {
+    getAssignments().then((response) => getAssignmentStaff(response)).then((response) => console.warn(response));
   }
 };
 
