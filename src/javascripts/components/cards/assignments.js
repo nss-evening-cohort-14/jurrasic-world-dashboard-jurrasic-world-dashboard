@@ -11,11 +11,15 @@ const showAssignments = () => {
 
 const showRideAssignments = (arr) => {
   let domString = '<ul class="list-group" id="ride-assignment-staff">';
-
   arr.forEach((item) => {
-    domString += `
-      <li class="list-group-item">${item.staff_firebaseKey}: ${item.ride_firebaseKey}</li>
-      `;
+    const staffArray = item.staff;
+    staffArray.forEach((member) => {
+      if (member.name.length > 0) {
+        domString += `
+        <li class="list-group-item" id="dino-staff-arr">${item.name} with Operator ${member.name}</li>
+        `;
+      }
+    });
   });
   domString += '</ul>';
 
@@ -24,11 +28,15 @@ const showRideAssignments = (arr) => {
 
 const showDinoAssignments = (arr) => {
   let domString = '<ul class="list-group" id="dino-assignment-staff">';
-
   arr.forEach((item) => {
-    domString += `
-      <li class="list-group-item">${item.staff_firebaseKey}: ${item.dino_firebaseKey}</li>
-      `;
+    const staffArray = item.staffInfoArray;
+    staffArray.forEach((member) => {
+      if (member.name.length > 0) {
+        domString += `
+        <li class="list-group-item" id="dino-staff-arr">${item.species} with Handler ${member.name}</li>
+        `;
+      }
+    });
   });
   domString += '</ul>';
 
@@ -37,11 +45,15 @@ const showDinoAssignments = (arr) => {
 
 const showVendorAssignments = (arr) => {
   let domString = '<ul class="list-group" id="vendor-assignment-staff">';
-
   arr.forEach((item) => {
-    domString += `
-      <li class="list-group-item">${item.staff_firebaseKey}: ${item.vendor_firebaseKey}</li>
-      `;
+    const staffArray = item.staff;
+    staffArray.forEach((member) => {
+      if (member.name.length > 0) {
+        domString += `
+        <li class="list-group-item" id="dino-staff-arr">${item.name} with Attendee ${member.name}</li>
+        `;
+      }
+    });
   });
   domString += '</ul>';
 
