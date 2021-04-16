@@ -41,7 +41,7 @@ import { assignStaffVendor } from '../data/vendorStaffData';
 import { assignStaffRide } from '../data/rideStaffData';
 import assignEquipmentForm from '../../components/forms/assignEquipmentForm';
 import checkEquipment from '../../components/buttons/equipmentButton';
-import { getAssignments, getAssignmentStaff } from '../data/assignmentData';
+import { dinosWithStaff, ridesWithStaff, vendorsWithStaff } from '../data/assignmentStaffData';
 
 const domEventsListener = (e) => {
   // LOAD PAGE CARDS
@@ -388,7 +388,9 @@ const domEventsListener = (e) => {
   }
 
   if (e.target.id.includes('view-staff-assignments')) {
-    getAssignments().then((response) => getAssignmentStaff(response)).then((response) => console.warn(response));
+    dinosWithStaff().then((response) => console.warn(response));
+    ridesWithStaff().then((response) => console.warn(response));
+    vendorsWithStaff().then((response) => console.warn(response));
   }
 };
 
