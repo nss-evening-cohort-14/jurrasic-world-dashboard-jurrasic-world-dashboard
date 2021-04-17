@@ -23,6 +23,9 @@ const navBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="rides">Rides</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#" id="assignments">Assignments</a>
+          </li>
           </ul>
           <div id="login-form-container"></div>
         </div>
